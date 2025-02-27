@@ -1,276 +1,131 @@
-/* General Reset */
+/* تنظيم عام */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  overflow: hidden;
-  background: linear-gradient(135deg, #000, #121212);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: 'Tajawal', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Moving Shapes Background */
-.shape-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
+/* خلفية متحركة */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(270deg, #6a11cb, #2575fc, #6a11cb);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s infinite;
+    z-index: -1;
 }
 
-.shape {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  animation: moveShape 10s infinite ease-in-out;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.shape:nth-child(1) {
-  top: 10%;
-  left: 20%;
-  animation-delay: 0s;
+/* التنقل */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.shape:nth-child(2) {
-  top: 30%;
-  left: 60%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 2s;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-.shape:nth-child(3) {
-  top: 70%;
-  left: 40%;
-  width: 120px;
-  height: 120px;
-  animation-delay: 4s;
+nav ul li {
+    margin: 0 15px;
 }
 
-.shape:nth-child(4) {
-  top: 90%;
-  left: 80%;
-  width: 60px;
-  height: 60px;
-  animation-delay: 6s;
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-@keyframes moveShape {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-100px) rotate(360deg);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(0) rotate(720deg);
-    opacity: 1;
-  }
+nav ul li a:hover {
+    color: #6a11cb;
 }
 
-/* Container Styling */
-.container {
-  position: relative;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-  z-index: 1;
+.social-icons {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+.social-icons a {
+    color: #333;
+    font-size: 24px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
 }
 
-header p {
-  font-size: 1rem;
-  color: #d0d0d0;
-  margin-bottom: 20px;
+.social-icons a:hover {
+    color: #6a11cb;
 }
 
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
+/* الصفحة الرئيسية */
+#home {
+    text-align: center;
+    padding: 10rem 2rem;
+    color: white;
 }
 
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.contact-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+#home p {
+    font-size: 1.5rem;
 }
 
-.telegram {
-  background: linear-gradient(135deg, #0088cc, #005f99);
-  background-size: 200%;
-  transition: background-position 0.5s ease;
+/* عنوان متحرك */
+.animated-title {
+    display: inline-block;
+    overflow: hidden;
 }
 
-.telegram:hover {
-  background-position: right;
+.animated-title span {
+    display: inline-block;
+    animation: slide-in 2s ease-in-out;
 }
 
-.instagram {
-  background: linear-gradient(135deg, #e1306c, #dd2a7b);
-  background-size: 200%;
-  transition: background-position 0.5s ease;
+@keyframes slide-in {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
-.instagram:hover {
-  background-position: right;
+/* قسم "من نحن" */
+#about {
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    margin-top: 2rem;
 }
 
-.icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.form-section {
-  margin-bottom: 20px;
-}
-
-.input-group {
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.input-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #d0d0d0;
-}
-
-.input-group input,
-.input-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: none;
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 10px;
-  background: linear-gradient(135deg, #28a745, #218838);
-  background-size: 200%;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-position 0.5s ease, transform 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-position: right;
-  transform: scale(1.05);
-}
-
-#form-message {
-  margin-top: 10px;
-  color: #00ff00;
-  font-size: 0.9rem;
-}
-
+/* التذييل */
 footer {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: #d0d0d0;
-  /* Parallax Background */
-.parallax {
-  position: relative;
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
-
-.parallax::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, #000, #121212);
-  z-index: -1;
-  transform: translateZ(-1px) scale(2
-                                   /* Animated Heading */
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  animation: pulse 3s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-.contact-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4);
-}
-
-.submit-btn:hover {
-  background-position: right;
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.4);
-}
-
-
