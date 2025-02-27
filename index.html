@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To contact me</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
@@ -19,17 +20,17 @@
         <span>لنتواصل</span>
         <span class="animated-subtitle">معًا</span>
       </h1>
-      <p>تواصل معي عبر المنصات التالية هذا موجود حاليا:</p>
+      <p class="header-description">تواصل معي عبر المنصات التالية متواجده حاليا:</p>
     </header>
 
     <!-- روابط التواصل -->
     <div class="contact-links">
       <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" class="icon">
+        <i class="fab fa-telegram-plane"></i>
         <span>تيليجرام</span>
       </a>
       <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="icon">
+        <i class="fab fa-instagram"></i>
         <span>إنستجرام</span>
       </a>
     </div>
@@ -39,24 +40,27 @@
       <h2>أو أرسل رسالة</h2>
       <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
         <div class="input-group">
-          <label for="name">الاسم:</label>
-          <input type="text" id="name" name="name" required class="animated-input">
+          <input type="text" id="name" name="name" required class="animated-input" placeholder="اسمك الكريم">
+          <i class="fas fa-user input-icon"></i>
         </div>
         <div class="input-group">
-          <label for="email">البريد الإلكتروني:</label>
-          <input type="email" id="email" name="email" required class="animated-input">
+          <input type="email" id="email" name="email" required class="animated-input" placeholder="البريد الإلكتروني">
+          <i class="fas fa-envelope input-icon"></i>
         </div>
         <div class="input-group">
-          <label for="message">الرسالة:</label>
-          <textarea id="message" name="message" required class="animated-input"></textarea>
+          <textarea id="message" name="message" required class="animated-input" placeholder="رسالتك ..."></textarea>
+          <i class="fas fa-comment-dots input-icon"></i>
         </div>
-        <button type="submit" class="submit-btn">إرسال</button>
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-paper-plane"></i>
+          إرسال الرسالة
+        </button>
       </form>
       <p id="form-message"></p>
     </section>
 
     <footer>
-      <p>&copy; 2023 عبد المعين شاهين. جميع الحقوق محفوظة.</p>
+      <p>&copy; 2025 s2a22 جميع الحقوق محفوظة.</p>
     </footer>
   </div>
 
@@ -67,4 +71,4 @@
     });
   </script>
 </body>
-</html>
+</html>ششش
