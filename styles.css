@@ -7,19 +7,21 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #333;
+  color: #fff;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
 .container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 500px;
   text-align: center;
@@ -28,12 +30,12 @@ body {
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #333;
+  color: #fff;
 }
 
 header p {
   font-size: 1rem;
-  color: #666;
+  color: #d0d0d0;
   margin-bottom: 20px;
 }
 
@@ -58,7 +60,7 @@ header p {
 
 .contact-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 .telegram {
@@ -88,22 +90,24 @@ header p {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #555;
+  color: #d0d0d0;
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-color: #0088cc;
+  background-color: rgba(255, 255, 255, 0.2);
   outline: none;
 }
 
@@ -125,12 +129,12 @@ header p {
 
 #form-message {
   margin-top: 10px;
-  color: green;
+  color: #00ff00;
   font-size: 0.9rem;
 }
 
 footer {
   margin-top: 20px;
   font-size: 0.8rem;
-  color: #666;
+  color: #d0d0d0;
 }
