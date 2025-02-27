@@ -13,4 +13,11 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
   // Simulate sending the message (replace this with actual server-side logic)
   document.getElementById('form-message').textContent = 'Message sent successfully!';
   document.getElementById('contact-form').reset(); // Clear the form
+
+  // Add a success animation
+  const successMessage = document.getElementById('form-message');
+  successMessage.style.opacity = '1';
+  setTimeout(() => {
+    successMessage.style.opacity = '0';
+  }, 3000);
 });
