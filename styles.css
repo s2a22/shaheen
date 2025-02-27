@@ -19,7 +19,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, #1a1a1a, #2d3436, #1a1a1a, #2d3436);
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364, #203a43);
     background-size: 400% 400%;
     animation: gradient-animation 15s ease infinite;
     z-index: -2;
