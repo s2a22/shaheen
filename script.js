@@ -22,6 +22,9 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     })
     .catch((error) => {
       console.error(error);
-      alert('An error occurred while sending your message.');
+      successMessage.textContent = 'An error occurred while sending your message.';
+      setTimeout(() => {
+        successMessage.textContent = '';
+      }, 3000);
     });
 });
