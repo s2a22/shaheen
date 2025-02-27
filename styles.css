@@ -12,7 +12,7 @@ body {
     background: #0a0a0a;
 }
 
-/* خلفية متحركة داكنة */
+/* تأثير الخلفية المتحركة الداكنة */
 .animated-background {
     position: fixed;
     top: -50%;
@@ -29,6 +29,97 @@ body {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* شريط التنقل */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #6a11cb;
+}
+
+.mode-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* تعديل للوضع الفاتح */
+body.light-mode {
+    background: #f0f0f0;
+    color: #333;
+}
+
+body.light-mode .animated-input {
+    background: rgba(0,0,0,0.05);
+    border-color: #ccc;
+    color: #333;
+}
+
+body.light-mode .animated-input:focus {
+    background: rgba(0,0,0,0.1);
+    border-color: #6a11cb;
+    box-shadow: 0 0 20px rgba(106,17,203,0.3);
+}
+
+body.light-mode .navbar {
+    background: rgba(255,255,255,0.9);
+}
+
+body.light-mode .nav-links li a {
+    color: #333;
+}
+
+body.light-mode .nav-links li a:hover {
+    color: #6a11cb;
+}
+
+body.light-mode .brand {
+    color: #333;
+}
+
+body.light-mode .submit-btn {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+/* تحسين الحاوية لتجنب تغطية شريط التنقل */
+.container {
+    margin-top: 70px;
+    padding: 20px;
 }
 
 /* تحسين العناوين */
@@ -56,7 +147,7 @@ body {
     100% { color: #37ecba; }
 }
 
-/* تحسين حقول الإدخال */
+/* حقول الإدخال */
 .input-group {
     position: relative;
     margin: 1.5rem 0;
@@ -88,7 +179,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* تحسين أزرار التواصل */
+/* أزرار التواصل */
 .contact-links {
     display: flex;
     gap: 25px;
@@ -142,6 +233,23 @@ body {
     box-shadow: 0 5px 15px rgba(106,17,203,0.4);
 }
 
+/* قسم حول الموقع */
+.about-section {
+    margin: 2rem 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.about-section h2 {
+    margin-bottom: 10px;
+    color: #6a11cb;
+}
+
+.about-section p {
+    line-height: 1.6;
+}
+
 /* التذييل */
 footer {
     margin-top: 4rem;
@@ -151,6 +259,63 @@ footer {
     backdrop-filter: blur(5px);
 }
 
+/* زر العودة للأعلى */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* نافذة المنبثقة */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* إعدادات إضافية للـ particles */
 #particles-js {
     position: fixed;
     width: 100%;
