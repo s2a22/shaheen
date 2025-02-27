@@ -25,10 +25,10 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
     });
 });
 
-// تفاعل الحقول
+// تفاعل الحقول مع تغيير اللون إلى ألوان داكنة
 document.querySelectorAll('.animated-input').forEach(input => {
     input.addEventListener('input', function() {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 95%)`;
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 30%)`;
     });
 });
 
