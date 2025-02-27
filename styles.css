@@ -1,4 +1,4 @@
-/* تنظيم عام */
+/* إعدادات عامة */
 * {
     margin: 0;
     padding: 0;
@@ -8,22 +8,22 @@
 body {
     font-family: 'Tajawal', sans-serif;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.8;
     position: relative;
     overflow-x: hidden;
 }
 
-/* خلفية متحركة */
+/* خلفية متحركة بتدرج ألوان */
 .animated-background {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: -50%;
+    left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(270deg, #6a11cb, #2575fc, #6a11cb);
+    background: linear-gradient(45deg, #6a11cb, #2575fc, #37ecba, #6a11cb);
     background-size: 400% 400%;
-    animation: gradient-animation 15s infinite;
-    z-index: -1;
+    animation: gradient-animation 15s ease infinite;
+    z-index: -2;
 }
 
 @keyframes gradient-animation {
@@ -32,100 +32,102 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* التنقل */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #6a11cb;
-}
-
-.social-icons {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.social-icons a {
-    color: #333;
-    font-size: 24px;
-    margin-left: 15px;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #6a11cb;
-}
-
-/* الصفحة الرئيسية */
-#home {
-    text-align: center;
-    padding: 10rem 2rem;
-    color: white;
-}
-
-#home h1 {
-    font-size: 3rem;
+/* تحريك العناوين */
+.animated-title {
+    animation: title-float 3s ease-in-out infinite alternate;
     margin-bottom: 1rem;
 }
 
-#home p {
-    font-size: 1.5rem;
-}
-
-/* عنوان متحرك */
-.animated-title {
+.animated-subtitle {
     display: inline-block;
-    overflow: hidden;
+    animation: subtitle-color 5s infinite;
 }
 
-.animated-title span {
-    display: inline-block;
-    animation: slide-in 2s ease-in-out;
+@keyframes title-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
 
-@keyframes slide-in {
-    0% { transform: translateY(100%); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+@keyframes subtitle-color {
+    0% { color: #6a11cb; }
+    50% { color: #2575fc; }
+    100% { color: #37ecba; }
 }
 
-/* قسم "من نحن" */
-#about {
-    padding: 2rem;
-    text-align: center;
-    background: white;
-    margin-top: 2rem;
+/* حقول الإدخال التفاعلية */
+.animated-input {
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid transparent;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
 }
 
-/* التذييل */
-footer {
-    background: #333;
+.animated-input:focus {
+    background: rgba(255,255,255,0.2);
+    border-color: #6a11cb;
+    box-shadow: 0 0 15px rgba(106,17,203,0.3);
+    outline: none;
+}
+
+/* تحسين بطاقات التواصل */
+.contact-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 2rem 0;
+    perspective: 1000px;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(255,255,255,0.9);
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-btn:hover {
+    transform: rotateY(10deg) translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* باقي الأنماط الأصلية مع التعديلات */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.submit-btn {
+    background: #6a11cb;
     color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #2575fc;
+}
+
+#form-message {
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    color: #2575fc;
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(51, 51, 51, 0.9);
+    color: white;
+    border-radius: 12px;
 }
