@@ -5,12 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Include particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
   <div class="container">
     <header>
       <h1>Let's Connect</h1>
-      <p>Hi it's me again</p>
+      <p>Feel free to reach out via the following platforms:</p>
     </header>
 
     <!-- Contact Links -->
@@ -28,7 +33,7 @@
     <!-- Contact Form -->
     <section class="form-section">
       <h2>Or Send Me a Message</h2>
-      <form id="contact-form" action="https://formspree.io/f/xangrwzy" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/your-endpoint" method="POST">
         <div class="input-group">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
@@ -47,10 +52,16 @@
     </section>
 
     <footer>
-      <p>&copy; 2025 Abdul Moein [shaheen]. All rights reserved.</p>
+      <p>&copy; 2023 Your Name. All rights reserved.</p>
     </footer>
   </div>
 
   <script src="script.js"></script>
+  <!-- Initialize particles.js -->
+  <script>
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('Particles loaded');
+    });
+  </script>
 </body>
 </html>
