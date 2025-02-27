@@ -13,8 +13,24 @@
   <!-- الخلفيات المدمجة -->
   <div class="animated-background"></div>
   <div id="particles-js"></div>
-
-  <div class="container">
+  
+  <!-- شريط التنقل -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">موقعي</a>
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#about">حول الموقع</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+      <button id="mode-toggle" class="mode-toggle" title="تبديل الوضع">
+        <i class="fas fa-adjust"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- المحتوى الرئيسي -->
+  <div class="container" id="home">
     <header>
       <h1 class="animated-title">
         <span>لنتواصل</span>
@@ -22,6 +38,12 @@
       </h1>
       <p class="header-description">تواصل معي عبر المنصات التالية المتواجده حاليا:</p>
     </header>
+
+    <!-- قسم حول الموقع -->
+    <section id="about" class="about-section">
+      <h2>حول الموقع</h2>
+      <p>هذا الموقع يهدف إلى تسهيل التواصل بين الزوار ومالك الموقع. هنا يمكنك إرسال رسالة أو التواصل عبر الروابط المتوفرة.</p>
+    </section>
 
     <!-- روابط التواصل -->
     <div class="contact-links">
@@ -36,7 +58,7 @@
     </div>
 
     <!-- نموذج الاتصال -->
-    <section class="form-section">
+    <section class="form-section" id="contact">
       <h2>أو أرسل رسالة</h2>
       <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
         <div class="input-group">
@@ -56,12 +78,22 @@
           إرسال الرسالة
         </button>
       </form>
-      <p id="form-message"></p>
     </section>
 
     <footer>
-      <p>&copy; 2025 @s2a22 جميع الحقوق محفوظة.</p>
+      <p>&copy; @s2a22 جميع الحقوق محفوظة.</p>
     </footer>
+  </div>
+
+  <!-- زر العودة للأعلى -->
+  <button id="back-to-top" title="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- نافذة منبثقة لتأكيد إرسال الرسالة -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <p id="modal-message">تم إرسال الرسالة بنجاح!</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
