@@ -6,21 +6,20 @@
 }
 
 body {
-    font-family: 'Tajawal', sans-serif;
-    color: #333;
+    font-family: 'Cairo', sans-serif;
+    color: #ffffff;
     line-height: 1.8;
-    position: relative;
-    overflow-x: hidden;
+    background: #0a0a0a;
 }
 
-/* خلفية متحركة بتدرج ألوان */
+/* خلفية متحركة داكنة */
 .animated-background {
     position: fixed;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, #6a11cb, #2575fc, #37ecba, #6a11cb);
+    background: linear-gradient(45deg, #1a1a1a, #2d3436, #1a1a1a, #2d3436);
     background-size: 400% 400%;
     animation: gradient-animation 15s ease infinite;
     z-index: -2;
@@ -32,15 +31,18 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* تحريك العناوين */
+/* تحسين العناوين */
 .animated-title {
     animation: title-float 3s ease-in-out infinite alternate;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(106,17,203,0.5);
 }
 
 .animated-subtitle {
     display: inline-block;
     animation: subtitle-color 5s infinite;
+    font-weight: 300;
 }
 
 @keyframes title-float {
@@ -54,80 +56,104 @@ body {
     100% { color: #37ecba; }
 }
 
-/* حقول الإدخال التفاعلية */
+/* تحسين حقول الإدخال */
+.input-group {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
 .animated-input {
-    transition: all 0.3s ease;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid transparent;
-    padding: 12px;
     width: 100%;
+    padding: 15px 45px 15px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid #2d3436;
     border-radius: 8px;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 16px;
 }
 
 .animated-input:focus {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.15);
     border-color: #6a11cb;
-    box-shadow: 0 0 15px rgba(106,17,203,0.3);
-    outline: none;
+    box-shadow: 0 0 20px rgba(106,17,203,0.3);
 }
 
-/* تحسين بطاقات التواصل */
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6a11cb;
+    font-size: 1.2rem;
+}
+
+/* تحسين أزرار التواصل */
 .contact-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
-    margin: 2rem 0;
-    perspective: 1000px;
+    margin: 3rem 0;
 }
 
 .contact-btn {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px 30px;
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: rgba(255,255,255,0.9);
-    text-decoration: none;
-    color: #333;
+    gap: 12px;
+    padding: 18px 35px;
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .contact-btn:hover {
-    transform: rotateY(10deg) translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    background: rgba(106,17,203,0.2);
+    box-shadow: 0 10px 25px rgba(106,17,203,0.2);
 }
 
-/* باقي الأنماط الأصلية مع التعديلات */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+.contact-btn i {
+    font-size: 1.5rem;
 }
 
+.telegram { color: #2AABEE; }
+.instagram { color: #E4405F; }
+
+/* زر الإرسال */
 .submit-btn {
-    background: #6a11cb;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
-    padding: 12px 30px;
+    padding: 15px 40px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
 }
 
 .submit-btn:hover {
-    background: #2575fc;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106,17,203,0.4);
 }
 
-#form-message {
-    text-align: center;
-    margin-top: 1rem;
-    color: #2575fc;
-}
-
+/* التذييل */
 footer {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background: rgba(51, 51, 51, 0.9);
-    color: white;
-    border-radius: 12px;
+    margin-top: 4rem;
+    padding: 2rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
