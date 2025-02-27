@@ -1,23 +1,27 @@
 document.getElementById('contact-form').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent form from submitting normally
+  event.preventDefault(); // Prevent default form submission
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  if (!name || !email || !message) {
-    alert('Please fill in all fields.');
-    return;
-  }
-
-  // Simulate sending the message (replace this with actual server-side logic)
-  document.getElementById('form-message').textContent = 'Message sent successfully!';
-  document.getElementById('contact-form').reset(); // Clear the form
-
-  // Add a success animation
+  const form = this;
   const successMessage = document.getElementById('form-message');
-  successMessage.style.opacity = '1';
-  setTimeout(() => {
-    successMessage.style.opacity = '0';
-  }, 3000);
+
+  fetch(form.action, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: new FormData(form),
+  })
+    .then((response) => {
+      if (response.ok) {
+        successMessage.textContent = 'Message sent successfully!';
+        form.reset();
+        setTimeout(() => {
+          successMessage.textContent = '';
+        }, 3000);
+      } else {
+        throw new Error('Failed to send message.');
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      alert('An error occurred while sending your message.');
+    });
 });
