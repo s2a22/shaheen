@@ -1,66 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me</title>
+  <title>To contact me</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Include particles.js -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- Particle Background -->
+  <!-- الخلفيات المدمجة -->
+  <div class="animated-background"></div>
   <div id="particles-js"></div>
 
   <div class="container">
     <header>
-      <h1>Let's Connect</h1>
-      <p>Feel free to reach out via the following platforms:</p>
+      <h1 class="animated-title">
+        <span>لنتواصل</span>
+        <span class="animated-subtitle">معًا</span>
+      </h1>
+      <p>تواصل معي عبر المنصات التالية هذا موجود حاليا:</p>
     </header>
 
-    <!-- Contact Links -->
+    <!-- روابط التواصل -->
     <div class="contact-links">
       <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram Logo" class="icon">
-        <span>Telegram</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" class="icon">
+        <span>تيليجرام</span>
       </a>
       <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram Logo" class="icon">
-        <span>Instagram</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="icon">
+        <span>إنستجرام</span>
       </a>
     </div>
 
-    <!-- Contact Form -->
+    <!-- نموذج الاتصال -->
     <section class="form-section">
-      <h2>Or Send Me a Message</h2>
+      <h2>أو أرسل رسالة</h2>
       <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
         <div class="input-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
+          <label for="name">الاسم:</label>
+          <input type="text" id="name" name="name" required class="animated-input">
         </div>
         <div class="input-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email">البريد الإلكتروني:</label>
+          <input type="email" id="email" name="email" required class="animated-input">
         </div>
         <div class="input-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+          <label for="message">الرسالة:</label>
+          <textarea id="message" name="message" required class="animated-input"></textarea>
         </div>
-        <button type="submit" class="submit-btn">Send</button>
+        <button type="submit" class="submit-btn">إرسال</button>
       </form>
       <p id="form-message"></p>
     </section>
 
     <footer>
-      <p>&copy; 2023 Abdul Moein [shaheen]. All rights reserved.</p>
+      <p>&copy; 2023 عبد المعين شاهين. جميع الحقوق محفوظة.</p>
     </footer>
   </div>
 
   <script src="script.js"></script>
-  <!-- Initialize particles.js -->
   <script>
     particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('Particles loaded');
+      console.log('تم تحميل الجسيمات');
     });
   </script>
 </body>
