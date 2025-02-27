@@ -1,140 +1,102 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #fff;
-  overflow: hidden;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-}
-
-.container {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 500px;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-header p {
-  font-size: 1rem;
-  color: #d0d0d0;
-  margin-bottom: 20px;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.contact-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-}
-
-.telegram {
-  background-color: #0088cc;
-}
-
-.instagram {
-  background-color: #e1306c;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.form-section {
-  margin-bottom: 20px;
-}
-
-.input-group {
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.input-group label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #d0d0d0;
-}
-
-.input-group input,
-.input-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: none;
-}
-
-.submit-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #218838;
-}
-
-#form-message {
-  margin-top: 10px;
-  color: #00ff00;
-  font-size: 0.9rem;
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 0.8rem;
-  color: #d0d0d0;
+{
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
 }
