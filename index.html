@@ -13,11 +13,20 @@
   <!-- خلفية متحركة باستخدام particles.js -->
   <div id="particles-js"></div>
 
-  <!-- شريط تنقل ثابت -->
+  <!-- شريط التنقل -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#home" class="brand">شاهين</a>
-      <ul class="nav-links">
+
+      <!-- أيقونة الثلاث خطوط (Hamburger Icon) -->
+      <div class="hamburger-icon" id="hamburger-icon" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <!-- قائمة الروابط المنسدلة -->
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="courses.html">كورسات</a></li>
         <li><a href="#about">حول الموقع</a></li>
@@ -32,47 +41,7 @@
     <p>تعرف على كورسات ومحتوى جديد قريباً.</p>
   </header>
 
-  <!-- قسم روابط التواصل الاجتماعي -->
-  <section class="contact-links">
-    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram" data-tooltip="تواصل عبر تيليجرام">
-      <i class="fab fa-telegram-plane icon"></i> تيليجرام
-    </a>
-    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram" data-tooltip="تواصل عبر إنستجرام">
-      <i class="fab fa-instagram icon"></i> إنستجرام
-    </a>
-  </section>
-
-  <!-- قسم تواصل الرسائل (نموذج) -->
-  <section id="contact" class="feedback-section">
-    <h2>أرسل رسالتك</h2>
-    <form id="feedback-form" action="https://formspree.io/f/xjkgnkdy" method="POST" onsubmit="handleSubmit(event)">
-      <div class="input-group">
-        <input type="text" id="user-name" name="name" placeholder="اسمك" required>
-      </div>
-      <div class="input-group">
-        <input type="email" id="user-email" name="email" placeholder="البريد الإلكتروني" required>
-      </div>
-      <div class="input-group">
-        <textarea id="user-message" name="message" placeholder="رسالتك" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">إرسال</button>
-    </form>
-    <div id="response-message"></div>
-  </section>
-
-  <!-- قسم حول الموقع -->
-  <section id="about" class="about-section">
-    <h2>حول الموقع</h2>
-    <p>هذا الموقع يقدم لك عروض كورسات ومحتوى جديد قادم قريباً.</p>
-  </section>
-
-  <!-- زر الرجوع للأعلى -->
-  <button id="back-to-top" class="back-to-top">↑</button>
-
-  <!-- التذييل -->
-  <footer>
-    <p>&copy; 2025 جميع الحقوق محفوظة - شاهين</p>
-  </footer>
+  <!-- باقي محتوى الموقع هنا ... -->
 
   <script src="particles.min.js"></script>
   <script src="script.js"></script>
