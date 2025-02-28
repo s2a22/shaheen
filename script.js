@@ -1,31 +1,18 @@
-// معالجة إرسال نموذج التواصل (Feedback)
-document.getElementById('feedback-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const responseMessage = document.getElementById('response-message');
-  responseMessage.innerHTML = "جاري إرسال الرسالة...";
-  fetch(event.target.action, {
-    method: 'POST',
-    body: new FormData(event.target)
-  })
-  .then(response => {
-    if (response.ok) {
-      responseMessage.innerHTML = "تم إرسال الرسالة بنجاح! شكراً لتواصلك.";
-    } else {
-      responseMessage.innerHTML = "حدث خطأ في إرسال الرسالة. يرجى المحاولة لاحقًا.";
-    }
-  })
-  .catch(error => {
-    responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
-  });
-  this.reset();
-});
-
-// معالجة إرسال نموذج النشرة البريدية
+// معالجة إرسال نموذج الاشتراك في النشرة البريدية
 document.getElementById('newsletter-form').addEventListener('submit', function(event) {
   event.preventDefault();
+  const email = document.getElementById('newsletter-email').value;
   const newsletterResponse = document.getElementById('newsletter-response');
-  // هنا يمكن ربط خدمة حقيقية للاشتراك، ونحن نُحاكي الاستجابة
-  newsletterResponse.innerHTML = "شكراً لاشتراكك في النشرة البريدية!";
+
+  // تحقق من صحة البريد الإلكتروني باستخدام تعبير منتظم
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (!emailRegex.test(email)) {
+    newsletterResponse.innerHTML = "البريد الإلكتروني غير صحيح. يرجى إدخال بريد صحيح.";
+    newsletterResponse.style.color = "red";
+  } else {
+    newsletterResponse.innerHTML = "شكرًا لك على الاشتراك في النشرة البريدية!";
+    newsletterResponse.style.color = "#27ae60";
+  }
   this.reset();
 });
 
@@ -51,17 +38,3 @@ window.onscroll = function() {
 document.getElementById('back-to-top').onclick = function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
-
-// تفعيل التمرير السلس لروابط شريط التنقل
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', function(event) {
-    const href = this.getAttribute('href');
-    if (href.startsWith('#')) {
-      event.preventDefault();
-      let target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
-});
