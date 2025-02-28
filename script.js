@@ -1,21 +1,33 @@
-// معالجة إرسال نموذج الاشتراك في النشرة البريدية
-document.getElementById('newsletter-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const email = document.getElementById('newsletter-email').value;
-  const newsletterResponse = document.getElementById('newsletter-response');
+// معالجة إرسال نموذج تواصل الرسائل
+function handleSubmit(event) {
+  event.preventDefault(); // منع إعادة تحميل الصفحة
 
-  // تحقق من صحة البريد الإلكتروني باستخدام تعبير منتظم
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  if (!emailRegex.test(email)) {
-    newsletterResponse.innerHTML = "البريد الإلكتروني غير صحيح. يرجى إدخال بريد صحيح.";
-    newsletterResponse.style.color = "red";
-  } else {
-    // هنا يمكن إرسال رسالة بريد إلكتروني حقيقية
-    newsletterResponse.innerHTML = "شكرًا لك على الاشتراك في النشرة البريدية!";
-    newsletterResponse.style.color = "#27ae60";
-  }
-  this.reset();
-});
+  // استعراض العناصر الخاصة بالاستجابة
+  const responseMessage = document.getElementById('response-message');
+  responseMessage.innerHTML = "تم إرسال الرسالة بنجاح! شكراً لتواصلك معنا.";
+
+  // إخفاء النموذج بعد إرسال الرسالة
+  document.getElementById('feedback-form').style.display = 'none';
+
+  // إرسال البيانات إلى Formspree
+  fetch(event.target.action, {
+    method: 'POST',
+    body: new FormData(event.target)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log("تم إرسال الرسالة بنجاح");
+    } else {
+      responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
+    }
+  })
+  .catch(error => {
+    responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
+  });
+
+  // إعادة تعيين النموذج
+  event.target.reset();
+}
 
 // تهيئة particles.js للخلفية المتحركة
 particlesJS('particles-js', {
