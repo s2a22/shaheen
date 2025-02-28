@@ -49,3 +49,28 @@ window.onscroll = function() {
 document.getElementById('back-to-top').onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+// إظهار زر الرجوع للأعلى عند التمرير
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById('back-to-top').style.display = "block";
+    } else {
+        document.getElementById('back-to-top').style.display = "none";
+    }
+};
+
+// العودة للأعلى عند الضغط على الزر
+document.getElementById('back-to-top').onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// تحسين التنقل في الموقع عبر الكمبيوتر
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        if (this.getAttribute('href').startsWith('#')) {
+            event.preventDefault();
+            let target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
