@@ -1,63 +1,51 @@
-// تهيئة الجسيمات
-particlesJS('particles-js', {
-  particles: {
-    number: { value: 100 },
-    color: { value: "#ffffff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.5 },
-    size: { value: 3, random: true },
-    move: {
-      enable: true,
-      speed: 5,
-      direction: "none",
-      out_mode: "out",
-      bounce: false
-    }
-  }
-});
+// Handle form submission
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent page reload on form submit
 
-// تحديد اللغة تلقائيًا
-const userLang = navigator.language.startsWith('ar') ? 'ar' : 'en';
-document.querySelectorAll('[data-lang]').forEach(el => {
-  if (el.dataset.lang !== userLang) el.style.display = 'none';
-});
+    // Show response message after form submission
+    const responseMessage = document.getElementById('response-message');
+    responseMessage.innerHTML = "جاري إرسال الرسالة...";
 
-// إدارة النموذج
-document.getElementById('myForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const status = document.querySelector('.form-status');
-  status.textContent = userLang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
-  status.style.color = 'gold';
-
-  try {
-    const response = await fetch('https://formspree.io/f/xjkgnkdy', {
-      method: 'POST',
-      body: new FormData(e.target),
-      headers: { 'Accept': 'application/json' }
+    // Send form data using Fetch API to Formspree
+    fetch(event.target.action, {
+        method: 'POST',
+        body: new FormData(event.target)
+    })
+    .then(response => {
+        if (response.ok) {
+            responseMessage.innerHTML = "تم إرسال الرسالة بنجاح! شكراً لتواصلك.";
+        } else {
+            responseMessage.innerHTML = "حدث خطأ في إرسال الرسالة. يرجى المحاولة لاحقًا.";
+        }
+    })
+    .catch(error => {
+        responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
     });
 
-    if (response.ok) {
-      status.textContent = userLang === 'ar' ? '✅ تم الإرسال بنجاح!' : '✅ Sent successfully!';
-      e.target.reset();
-    } else {
-      throw new Error(userLang === 'ar' ? 'فشل في الإرسال' : 'Failed to send');
-    }
-  } catch (error) {
-    status.textContent = `❌ ${error.message}`;
-    status.style.color = 'red';
+    // Reset the form after submission
+    this.reset();
+});
+
+// Initialize particles.js
+particlesJS('particles-js', {
+  particles: {
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    number: { value: 80 },
+    size: { value: 3 }
   }
 });
 
-// التحقق من البريد
-document.getElementById('userEmail').addEventListener('input', (e) => {
-  const icon = e.target.parentElement.querySelector('.validation-icon');
-  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
-  icon.style.background = isValid ? '#2ecc71' : '#e74c3c';
-});
+// Show Back-to-Top button when scrolling
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById('back-to-top').style.display = "block";
+    } else {
+        document.getElementById('back-to-top').style.display = "none";
+    }
+};
 
-// عداد الحروف
-document.getElementById('userMessage').addEventListener('input', (e) => {
-  const counter = e.target.parentElement.querySelector('.char-counter');
-  counter.textContent = `${e.target.value.length}/500`;
-  counter.style.color = e.target.value.length > 450 ? '#e74c3c' : '#fff';
-});
+// Scroll to the top when clicking Back-to-Top button
+document.getElementById('back-to-top').onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
