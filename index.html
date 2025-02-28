@@ -3,43 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شاهين</title>
+  <title>شاهين | منصة تعليمية</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- خلفية متحركة باستخدام particles.js -->
+  <!-- خلفية متحركة -->
   <div id="particles-js"></div>
 
-  <!-- شريط التنقل -->
+  <!-- شريط تنقل مبسط -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#home" class="brand">شاهين</a>
-
-      <!-- أيقونة الثلاث خطوط (Hamburger Icon) -->
-      <div class="hamburger-icon" id="hamburger-icon" onclick="toggleMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-
-      <!-- قائمة الروابط المنسدلة -->
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="#home">الرئيسية</a></li>
-        <li><a href="courses.html">كورسات</a></li>
-        <li><a href="#about">حول الموقع</a></li>
-        <li><a href="#contact">تواصل</a></li>
+        <li><a href="courses.html">الكورسات</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- قسم الهيدر -->
   <header id="home">
-    <h1>مرحبا بكم في موقع شاهين</h1>
-    <p>تعرف على كورسات ومحتوى جديد قريباً.</p>
+    <h1>مرحبا بكم في منصة شاهين التعليمية</h1>
+    <p>انطلق في رحلة التعلم مع أفضل الكورسات المهنية</p>
   </header>
+
+  <!-- قسم التواصل -->
+  <section id="contact" class="feedback-section">
+    <h2>تواصل معنا</h2>
+    <form id="feedback-form" action="https://formspree.io/f/xjkgnkdy" method="POST" onsubmit="handleSubmit(event)">
+      <div class="input-group">
+        <input type="text" id="user-name" name="name" placeholder="الاسم الكامل" required>
+      </div>
+      <div class="input-group">
+        <input type="email" id="user-email" name="email" placeholder="البريد الإلكتروني" required>
+      </div>
+      <div class="input-group">
+        <textarea id="user-message" name="message" placeholder="نص الرسالة..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">إرسال الرسالة <i class="fas fa-paper-plane"></i></button>
+    </form>
+    <div id="response-message"></div>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <p>&copy; 2025 جميع الحقوق محفوظة - منصة شاهين التعليمية</p>
+  </footer>
+
+  <script src="particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
 
   <!-- قسم روابط التواصل الاجتماعي -->
   <section class="contact-links">
@@ -50,40 +65,4 @@
       <i class="fab fa-instagram icon"></i> إنستجرام
     </a>
   </section>
-
-  <!-- قسم تواصل الرسائل (نموذج) -->
-  <section id="contact" class="feedback-section">
-    <h2>أرسل رسالتك</h2>
-    <form id="feedback-form" action="https://formspree.io/f/xjkgnkdy" method="POST" onsubmit="handleSubmit(event)">
-      <div class="input-group">
-        <input type="text" id="user-name" name="name" placeholder="اسمك" required>
-      </div>
-      <div class="input-group">
-        <input type="email" id="user-email" name="email" placeholder="البريد الإلكتروني" required>
-      </div>
-      <div class="input-group">
-        <textarea id="user-message" name="message" placeholder="رسالتك" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">إرسال</button>
-    </form>
-    <div id="response-message"></div>
-  </section>
-
-  <!-- قسم حول الموقع -->
-  <section id="about" class="about-section">
-    <h2>حول الموقع</h2>
-    <p>هذا الموقع يقدم لك عروض كورسات ومحتوى جديد قادم قريباً.</p>
-  </section>
-
-  <!-- زر الرجوع للأعلى -->
-  <button id="back-to-top" class="back-to-top">↑</button>
-
-  <!-- التذييل -->
-  <footer>
-    <p>&copy; 2025 جميع الحقوق محفوظة - شاهين</p>
-  </footer>
-
-  <script src="particles.min.js"></script>
-  <script src="script.js"></script>
-</body>
 </html>
