@@ -7,10 +7,11 @@
 
 body {
   font-family: 'Cairo', sans-serif;
-  background: #f0f0f0;
-  color: #333;
+  background: #2c3e50;
+  color: #fff;
   text-align: center;
   padding: 20px;
+  transition: background 0.5s;
 }
 
 header {
@@ -19,18 +20,16 @@ header {
 
 h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 p {
   font-size: 1.2rem;
-  color: #777;
+  color: #ecf0f1;
 }
 
-.contact-links {
-  margin: 30px 0;
-}
-
+/* تأثيرات للأزرار */
 .contact-btn {
   display: inline-block;
   padding: 15px 30px;
@@ -40,11 +39,12 @@ p {
   border-radius: 5px;
   text-decoration: none;
   background-color: #4CAF50;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact-btn:hover {
   background-color: #45a049;
+  transform: translateY(-5px);
 }
 
 .telegram {
@@ -55,6 +55,10 @@ p {
   background-color: #E4405F;
 }
 
+.contact-btn:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 /* نموذج الاتصال */
 .form-section {
   margin-top: 40px;
@@ -62,20 +66,29 @@ p {
 
 .form-section h2 {
   font-size: 1.8rem;
-  color: #333;
+  color: #fff;
 }
 
 .input-group {
   margin: 15px 0;
+  position: relative;
 }
 
 input, textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #34495e;
+  color: #ecf0f1;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
 }
 
 textarea {
@@ -91,16 +104,31 @@ textarea {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .submit-btn:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
 
 /* التذييل */
 footer {
   margin-top: 40px;
   font-size: 1rem;
-  color: #777;
+  color: #ecf0f1;
+}
+
+/* تأثيرات خلفية */
+body {
+  background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(46, 61, 73, 0.7)), url('https://via.placeholder.com/1920x1080'); 
+  background-size: cover;
+  background-position: center;
+  transition: background 1s ease-in-out;
+}
+
+#response-message {
+  margin-top: 20px;
+  color: #27ae60;
+  font-size: 1.2rem;
 }
