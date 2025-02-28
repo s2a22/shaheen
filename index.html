@@ -3,76 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معي | النسخة المطورة</title>
+  <title>تواصل معي | النسخة الذكية</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" as="style">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- الجسيمات المتحركة -->
+  <!-- طبقة الجسيمات -->
   <div id="particles-js"></div>
 
   <!-- المحتوى الرئيسي -->
   <main class="container">
     <header class="hero">
-      <h1 class="title animate-pop">تواصل معي</h1>
-      <p class="subtitle">أرسل رسالتك أو تواصل عبر الوسائل التالية</p>
+      <h1 class="title animate-float">مرحبا بك 👋</h1>
+      <p class="subtitle">أرسل رسالتك الآن بكل سهولة</p>
     </header>
 
-    <!-- روابط التواصل -->
-    <section class="social-grid">
-      <a href="https://t.me/s2a22" target="_blank" class="social-card telegram">
-        <i class="fab fa-telegram-plane"></i>
-        <span>تيليجرام</span>
-        <div class="wave-effect"></div>
-      </a>
-      <a href="https://www.instagram.com/s2a2222/" target="_blank" class="social-card instagram">
-        <i class="fab fa-instagram"></i>
-        <span>إنستجرام</span>
-        <div class="wave-effect"></div>
-      </a>
-    </section>
+    <!-- النموذج الذكي -->
+    <section class="smart-form">
+      <form id="myForm">
+        <!-- حقل الاسم مع تأثير البلازما -->
+        <div class="input-box plasma-effect">
+          <input type="text" id="userName" required>
+          <label for="userName">اسمك الكريم</label>
+          <div class="glow"></div>
+        </div>
 
-    <!-- نموذج الاتصال -->
-    <section class="contact-form-section">
-      <form id="contactForm">
-        <div class="form-group">
-          <input type="text" id="fullName" name="name" required>
-          <label for="fullName">الاسم الكامل</label>
-          <div class="underline"></div>
+        <!-- حقل البريد مع التحقق التلقائي -->
+        <div class="input-box plasma-effect">
+          <input type="email" id="userEmail" required>
+          <label for="userEmail">بريدك الإلكتروني</label>
+          <div class="glow"></div>
+          <div class="validation-icon"></div>
         </div>
-        
-        <div class="form-group">
-          <input type="email" id="emailAddress" name="email" required>
-          <label for="emailAddress">البريد الإلكتروني</label>
-          <div class="underline"></div>
+
+        <!-- حقل الرسالة مع عداد الحروف -->
+        <div class="input-box plasma-effect">
+          <textarea id="userMessage" required maxlength="500"></textarea>
+          <label for="userMessage">رسالتك...</label>
+          <div class="glow"></div>
+          <span class="char-counter">0/500</span>
         </div>
-        
-        <div class="form-group">
-          <textarea id="yourMessage" name="message" required></textarea>
-          <label for="yourMessage">رسالتك...</label>
-          <div class="underline"></div>
-        </div>
-        
-        <button type="submit" class="submit-btn">
-          <span>إرسال الآن</span>
-          <div class="loading-dots"></div>
+
+        <button type="submit" class="magic-btn">
+          <span>إرسال الرسالة</span>
+          <div class="sparkles"></div>
         </button>
       </form>
-      <div id="formResult" class="result-message"></div>
+      <div class="form-status"></div>
     </section>
+
+    <!-- الأيقونات الاجتماعية مع تأثير الهولوغرام -->
+    <div class="hologram-social">
+      <a href="https://t.me/s2a22" class="hologram-icon telegram">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+      <a href="https://www.instagram.com/s2a2222/" class="hologram-icon instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </main>
-
-  <!-- الزر العائم -->
-  <button id="scrollTop" class="scroll-top-btn">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-
-  <!-- تذييل الصفحة -->
-  <footer class="main-footer">
-    <p>© 2025 جميع الحقوق محفوظة | تم التطوير بحب ❤️</p>
-  </footer>
 
   <script src="particles.min.js"></script>
   <script src="script.js"></script>
