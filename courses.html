@@ -14,11 +14,13 @@
   </div>
 
   <script>
-    // عند تحميل الصفحة، إخفاء "Soon" و إظهار "Coming Soon"
-    setTimeout(function() {
-      document.getElementById('soon-message').style.display = 'none';
-      document.getElementById('coming-soon-message').style.display = 'block';
-    }, 3000);  // تظهر الرسالة بعد 3 ثواني
+    // عند تحميل الصفحة، تغيير لون كلمة "Soon" كل 2 ثانية
+    setInterval(function() {
+      const soonMessage = document.getElementById('soon-message');
+      const colors = ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      soonMessage.style.color = randomColor;
+    }, 2000);  // تغيير اللون كل 2 ثانية
   </script>
 </body>
 </html>
