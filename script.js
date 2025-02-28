@@ -2,7 +2,6 @@
 function handleSubmit(event) {
   event.preventDefault(); // منع إعادة تحميل الصفحة
 
-  // استعراض العناصر الخاصة بالاستجابة
   const responseMessage = document.getElementById('response-message');
   responseMessage.innerHTML = "تم إرسال الرسالة بنجاح! شكراً لتواصلك معنا.";
 
