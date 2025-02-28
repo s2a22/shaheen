@@ -42,7 +42,7 @@ contactForm.addEventListener('submit', async (e) => {
 
   try {
     const formData = new FormData(contactForm);
-    const response = await fetch(contactForm.action, {
+    const response = await fetch('https://formspree.io/f/xjkgnkdy', {
       method: 'POST',
       body: formData,
       headers: { 'Accept': 'application/json' }
