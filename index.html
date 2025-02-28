@@ -1,68 +1,50 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شاهين | منصة تعليمية</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع شاهين</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- خلفية متحركة -->
-  <div id="particles-js"></div>
 
-  <!-- شريط تنقل مبسط -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="brand">شاهين</a>
-      <ul class="nav-links">
-        <li><a href="#home">الرئيسية</a></li>
-        <li><a href="courses.html">الكورسات</a></li>
-      </ul>
+    <!-- البار العلوي -->
+    <div class="navbar">
+        <div class="logo">شاهين</div>
+        <div>
+            <a href="#courses">كورسات</a>
+            <a href="https://www.instagram.com/s2a2222" target="_blank">إنستا</a>
+            <a href="https://t.me/s2a22" target="_blank">تيلي</a>
+        </div>
     </div>
-  </nav>
 
-  <!-- قسم الهيدر -->
-  <header id="home">
-    <h1>مرحبا بكم في منصة شاهين التعليمية</h1>
-    <p>انطلق في رحلة التعلم مع أفضل الكورسات المهنية</p>
-  </header>
+    <!-- القسم الرئيسي -->
+    <div class="hero">
+        <h1>مرحبًا بك في موقع شاهين</h1>
+        <p>هنا تجد كل ما تحتاجه من موارد تعليمية وأكثر!</p>
+        <div class="icons">
+            <span class="icon" onclick="changeIconColor(this)">💻</span>
+            <span class="icon" onclick="changeIconColor(this)">📱</span>
+            <span class="icon" onclick="changeIconColor(this)">📚</span>
+        </div>
+    </div>
 
-  <!-- قسم التواصل -->
-  <section id="contact" class="feedback-section">
-    <h2>تواصل معنا</h2>
-    <form id="feedback-form" action="https://formspree.io/f/xjkgnkdy" method="POST" onsubmit="handleSubmit(event)">
-      <div class="input-group">
-        <input type="text" id="user-name" name="name" placeholder="الاسم الكامل" required>
-      </div>
-      <div class="input-group">
-        <input type="email" id="user-email" name="email" placeholder="البريد الإلكتروني" required>
-      </div>
-      <div class="input-group">
-        <textarea id="user-message" name="message" placeholder="نص الرسالة..." required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">إرسال الرسالة <i class="fas fa-paper-plane"></i></button>
-    </form>
-    <div id="response-message"></div>
-  </section>
+    <!-- قسم الكورسات -->
+    <div id="courses" class="contact-form">
+        <h2>كورسات</h2>
+        <p>انتظر قريباً المزيد من الكورسات.</p>
+    </div>
 
-  <!-- التذييل -->
-  <footer>
-    <p>&copy; 2025 جميع الحقوق محفوظة - منصة شاهين التعليمية</p>
-  </footer>
+    <!-- نموذج التواصل -->
+    <div class="contact-form">
+        <h2>تواصل معنا</h2>
+        <form action="https://formspree.io/f/xjkgnkdy" method="POST">
+            <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+            <textarea name="message" placeholder="اكتب رسالتك هنا" rows="5" required></textarea>
+            <button type="submit">إرسال</button>
+        </form>
+    </div>
 
-  <script src="particles.min.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
-  <!-- قسم روابط التواصل الاجتماعي -->
-  <section class="contact-links">
-    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram" data-tooltip="تواصل عبر تيليجرام">
-      <i class="fab fa-telegram-plane icon"></i> تيليجرام
-    </a>
-    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram" data-tooltip="تواصل عبر إنستجرام">
-      <i class="fab fa-instagram icon"></i> إنستجرام
-    </a>
-  </section>
 </html>
