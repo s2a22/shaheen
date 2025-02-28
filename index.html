@@ -9,27 +9,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
   <!-- خلفية متحركة باستخدام particles.js -->
   <div id="particles-js"></div>
 
   <!-- شريط تنقل ثابت -->
   <nav class="navbar">
-  <div class="nav-container">
-    <a href="#home" class="brand">شاهين</a> <!-- اسم الموقع -->
-    <ul class="nav-links">
-      <li><a href="#home">الرئيسية</a></li>
-      <li><a href="courses.html">كورسات</a></li>
-      <li><a href="#about">حول الموقع</a></li>
-      <li><a href="#contact">تواصل</a></li>
-    </ul>
-  </div>
-</nav>
-
+    <div class="nav-container">
+      <a href="#home" class="brand">شاهين</a>
+      <ul class="nav-links">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="courses.html">كورسات</a></li>
+        <li><a href="#about">حول الموقع</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- قسم الهيدر -->
   <header id="home">
     <h1>مرحبا بكم في موقع شاهين</h1>
-    <p>تعرف على كورسات ومحتوى جديد قريباً.</p>
+    <p>موقع احترافي للتواصل مع شاهين، وتعرف على كورسات ومحتوى جديد قريباً.</p>
   </header>
 
   <!-- قسم روابط التواصل الاجتماعي -->
@@ -42,30 +41,6 @@
     </a>
   </section>
 
-  <!-- قسم حول الموقع -->
-  <section id="about" class="about-section">
-    <h2>حول الموقع</h2>
-    <p>موقع يقدم في كورسات مسربة حاليا بسعر يعتبر معقول.</p>
-  </section>
-
-  <!-- قسم تواصل الرسائل (نموذج) -->
-  <section id="contact" class="feedback-section">
-    <h2>أرسل رسالتك</h2>
-    <form id="feedback-form" action="https://formspree.io/f/xjkgnkdy" method="POST">
-      <div class="input-group">
-        <input type="text" id="user-name" name="name" placeholder="اسمك" required>
-      </div>
-      <div class="input-group">
-        <input type="email" id="user-email" name="email" placeholder="البريد الإلكتروني" required>
-      </div>
-      <div class="input-group">
-        <textarea id="user-message" name="message" placeholder="رسالتك" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">إرسال</button>
-    </form>
-    <div id="response-message"></div>
-  </section>
-
   <!-- قسم الاشتراك في النشرة البريدية -->
   <section id="newsletter" class="newsletter-section">
     <h2>اشترك في النشرة البريدية</h2>
@@ -76,6 +51,12 @@
       <button type="submit" class="submit-btn">اشترك</button>
     </form>
     <div id="newsletter-response"></div>
+  </section>
+
+  <!-- قسم حول الموقع -->
+  <section id="about" class="about-section">
+    <h2>حول الموقع</h2>
+    <p>هذا الموقع يقدم لك وسيلة تواصل احترافية مع شاهين، بالإضافة إلى عرض كورسات ومحتوى جديد قادم قريباً.</p>
   </section>
 
   <!-- زر الرجوع للأعلى -->
