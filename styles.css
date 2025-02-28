@@ -29,7 +29,7 @@ body {
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 0; /* تقليص الحواف لتناسب الهواتف */
+  padding: 10px 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -50,7 +50,7 @@ body {
 /* شعار الموقع (شاهين) */
 .navbar .brand {
   color: #ecf0f1;
-  font-size: 1.6rem; /* تقليص حجم الخط */
+  font-size: 1.6rem;
   text-decoration: none;
   font-weight: bold;
   padding-left: 10px;
@@ -66,7 +66,7 @@ body {
 .navbar .nav-links a {
   color: #ecf0f1;
   text-decoration: none;
-  font-size: 1rem; /* تقليص حجم الخط */
+  font-size: 1rem;
   font-weight: 500;
   padding: 5px 15px;
   border-radius: 5px;
@@ -113,55 +113,6 @@ header p {
   font-size: 1.2rem;
   color: #bdc3c7;
   margin-bottom: 30px;
-}
-
-/* قسم روابط التواصل الاجتماعي */
-.contact-links {
-  margin: 20px 0;
-}
-
-.contact-btn {
-  display: inline-block;
-  padding: 20px;
-  margin: 10px;
-  font-size: 1.5rem;
-  color: #fff;
-  border-radius: 50%;
-  text-decoration: none;
-  background-color: #34495e;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  cursor: pointer;
-}
-
-.telegram, .instagram {
-  font-size: 2.5rem;
-}
-
-@keyframes changeColor {
-  0% {
-    color: #2AABEE;
-  }
-  25% {
-    color: #E4405F;
-  }
-  50% {
-    color: #3b5998;
-  }
-  75% {
-    color: #ff6f00;
-  }
-  100% {
-    color: #0084ff;
-  }
-}
-
-.telegram .icon, .instagram .icon {
-  animation: changeColor 3s infinite;
-}
-
-.contact-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* قسم تواصل الرسائل (نموذج) */
