@@ -1,3 +1,9 @@
+// وظيفة لتبديل حالة القائمة (الظهور/الإخفاء) عند الضغط على الثلاث خطوط
+function toggleMenu() {
+  const navLinks = document.getElementById("nav-links");
+  navLinks.classList.toggle("active");
+}
+
 // معالجة إرسال نموذج تواصل الرسائل
 function handleSubmit(event) {
   event.preventDefault(); // منع إعادة تحميل الصفحة
