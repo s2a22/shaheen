@@ -25,3 +25,13 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     // Reset the form after submission
     this.reset();
 });
+
+// Initialize particles.js
+particlesJS('particles-js', {
+  particles: {
+    color: { value: "#ffffff" },
+    shape: { type: "circle" },
+    number: { value: 80 },
+    size: { value: 3 }
+  }
+});
