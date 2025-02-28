@@ -1,37 +1,71 @@
 // Handle form submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent page reload on form submit
-
-    // Show response message after form submission
+document.getElementById('contact-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
     const responseMessage = document.getElementById('response-message');
-    responseMessage.innerHTML = "جاري إرسال الرسالة...";
+    responseMessage.style.color = "#fff"; // تغيير اللون للإشارة المرئية
+    
+    try {
+        const formData = new FormData(this);
+        const response = await fetch(event.target.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
 
-    // Send form data using Fetch API to Formspree
-    fetch(event.target.action, {
-        method: 'POST',
-        body: new FormData(event.target)
-    })
-    .then(response => {
         if (response.ok) {
-            responseMessage.innerHTML = "تم إرسال الرسالة بنجاح! شكراً لتواصلك.";
+            responseMessage.innerHTML = "✅ تم إرسال الرسالة بنجاح! سأرد خلال 24 ساعة";
+            this.reset();
         } else {
-            responseMessage.innerHTML = "حدث خطأ في إرسال الرسالة. يرجى المحاولة لاحقًا.";
+            const errorData = await response.json();
+            throw new Error(errorData.error || 'خطأ في الإرسال');
         }
-    })
-    .catch(error => {
-        responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
-    });
-
-    // Reset the form after submission
-    this.reset();
+    } catch (error) {
+        responseMessage.innerHTML = `❌ حدث خطأ: ${error.message}`;
+    }
 });
 
 // Initialize particles.js
 particlesJS('particles-js', {
   particles: {
     color: { value: "#ffffff" },
-    shape: { type: "circle" },
-    number: { value: 80 },
-    size: { value: 3 }
+    opacity: { value: 0.5 },
+    size: { value: 3, random: true },
+    line_linked: {
+      color: "#ffffff",
+      opacity: 0.2,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 3,
+      direction: "none",
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" }
+    }
   }
+});
+
+// Back to Top Button
+window.addEventListener('scroll', () => {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+document.getElementById('back-to-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Email Validation
+document.getElementById('email').addEventListener('input', function(e) {
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
+    e.target.style.borderColor = isValid ? "#2ecc71" : "#e74c3c";
 });
