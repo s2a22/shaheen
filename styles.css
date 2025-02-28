@@ -7,29 +7,31 @@
 
 body {
   font-family: 'Cairo', sans-serif;
-  background: #2c3e50;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
   color: #fff;
   text-align: center;
   padding: 20px;
-  transition: background 0.5s;
+  transition: background 1s ease-in-out;
 }
 
 header {
   margin-bottom: 30px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 p {
   font-size: 1.2rem;
   color: #ecf0f1;
+  margin-bottom: 20px;
 }
 
-/* تأثيرات للأزرار */
+/* تحسين الأزرار */
 .contact-btn {
   display: inline-block;
   padding: 15px 30px;
@@ -39,12 +41,13 @@ p {
   border-radius: 5px;
   text-decoration: none;
   background-color: #4CAF50;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
   background-color: #45a049;
   transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .telegram {
@@ -62,6 +65,7 @@ p {
 /* نموذج الاتصال */
 .form-section {
   margin-top: 40px;
+  animation: slideUp 1s ease-out;
 }
 
 .form-section h2 {
@@ -119,16 +123,20 @@ footer {
   color: #ecf0f1;
 }
 
-/* تأثيرات خلفية */
-body {
-  background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(46, 61, 73, 0.7)), url('https://via.placeholder.com/1920x1080'); 
-  background-size: cover;
-  background-position: center;
-  transition: background 1s ease-in-out;
+/* تأثيرات */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 #response-message {
   margin-top: 20px;
   color: #27ae60;
   font-size: 1.2rem;
+  animation: fadeIn 2s ease-in-out;
 }
