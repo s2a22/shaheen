@@ -8,19 +8,18 @@
 </head>
 <body>
   <div class="courses-container">
-    <h1 id="soon-message">قريباً</h1>
-    <p id="coming-soon-message">سيتم إضافة الكورسات قريبًا!</p>
-    <a href="index.html" class="back-btn">العودة إلى الصفحة الرئيسية</a>
+    <h1 id="soon-message">كورسات قريباً!</h1>
+    <p class="coming-soon-text">جاري التحضير للإطلاق...</p>
+    <a href="index.html" class="back-btn">العودة إلى الرئيسية</a>
   </div>
 
   <script>
-    // عند تحميل الصفحة، تغيير لون كلمة "Soon" كل 2 ثانية
-    setInterval(function() {
-      const soonMessage = document.getElementById('soon-message');
-      const colors = ["#3498db", "#e74c3c", "#2ecc71", "#f39c12"];
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      soonMessage.style.color = randomColor;
-    }, 2000);  // تغيير اللون كل 2 ثانية
+    // تغيير لون العنوان كل ثانية
+    const colors = ["#3498db", "#e74c3c", "#2ecc71", "#f1c40f", "#9b59b6"];
+    setInterval(() => {
+      document.getElementById("soon-message").style.color = 
+        colors[Math.floor(Math.random() * colors.length)];
+    }, 1000);
   </script>
 </body>
 </html>
