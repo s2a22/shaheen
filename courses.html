@@ -8,9 +8,17 @@
 </head>
 <body>
   <div class="courses-container">
-    <h1>قريباً</h1>
-    <p>سيتم إضافة الكورسات قريباً!</p>
+    <h1 id="soon-message">قريباً</h1>
+    <p id="coming-soon-message">سيتم إضافة الكورسات قريبًا!</p>
     <a href="index.html" class="back-btn">العودة إلى الصفحة الرئيسية</a>
   </div>
+
+  <script>
+    // عند تحميل الصفحة، إخفاء "Soon" و إظهار "Coming Soon"
+    setTimeout(function() {
+      document.getElementById('soon-message').style.display = 'none';
+      document.getElementById('coming-soon-message').style.display = 'block';
+    }, 3000);  // تظهر الرسالة بعد 3 ثواني
+  </script>
 </body>
 </html>
