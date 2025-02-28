@@ -3,71 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شاهين | تواصل معي</title>
+  <title>تواصل معي</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!-- طبقة الجسيمات -->
+
+  <!-- Background Particles -->
   <div id="particles-js"></div>
 
-  <!-- المحتوى الرئيسي -->
-  <main class="container">
-    <header class="hero">
-      <h1 class="title animate-float" data-lang="ar">مرحبًا شاهين 👋</h1>
-      <h1 class="title animate-float" data-lang="en">Welcome Shahin 👋</h1>
-      <p class="subtitle" data-lang="ar">أرسل رسالتك الآن بكل سهولة</p>
-      <p class="subtitle" data-lang="en">Send your message easily</p>
-    </header>
-
-    <!-- النموذج الذكي -->
-    <section class="smart-form">
-      <form id="myForm">
-        <!-- حقل الاسم -->
-        <div class="input-box">
-          <input type="text" id="userName" required>
-          <label for="userName" data-lang="ar">اسمك الكريم</label>
-          <label for="userName" data-lang="en">Your Name</label>
-          <div class="glow"></div>
-        </div>
-
-        <!-- حقل البريد -->
-        <div class="input-box">
-          <input type="email" id="userEmail" required>
-          <label for="userEmail" data-lang="ar">بريدك الإلكتروني</label>
-          <label for="userEmail" data-lang="en">Your Email</label>
-          <div class="glow"></div>
-          <div class="validation-icon"></div>
-        </div>
-
-        <!-- حقل الرسالة -->
-        <div class="input-box">
-          <textarea id="userMessage" required maxlength="500"></textarea>
-          <label for="userMessage" data-lang="ar">رسالتك...</label>
-          <label for="userMessage" data-lang="en">Your Message...</label>
-          <div class="glow"></div>
-          <span class="char-counter">0/500</span>
-        </div>
-
-        <button type="submit" class="magic-btn">
-          <span data-lang="ar">إرسال الرسالة</span>
-          <span data-lang="en">Send Message</span>
-          <div class="sparkles"></div>
-        </button>
-      </form>
-      <div class="form-status"></div>
-    </section>
-
-    <!-- الأيقونات الاجتماعية -->
-    <div class="social-icons">
-      <a href="https://t.me/s2a22" class="social-icon telegram">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
-      <a href="https://www.instagram.com/s2a2222/" class="social-icon instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
+  <!-- Sticky Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="brand">شاهين</a>
+      <ul class="nav-links">
+        <li><a href="#contact">اتصل بنا</a></li>
+        <li><a href="#about">حول الموقع</a></li>
+      </ul>
     </div>
-  </main>
+  </nav>
+
+  <!-- Header Section -->
+  <header id="home">
+    <h1>تواصل معي</h1>
+    <p>أنا هنا للرد على استفساراتك! تواصل معي عبر الوسائل التالية أو عبر النموذج.</p>
+  </header>
+
+  <!-- Contact Links Section -->
+  <section class="contact-links">
+    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram" data-tooltip="تواصل عبر تيليجرام">
+      <i class="fab fa-telegram-plane icon"></i> تيليجرام
+    </a>
+    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram" data-tooltip="تواصل عبر إنستجرام">
+      <i class="fab fa-instagram icon"></i> إنستجرام
+    </a>
+  </section>
+
+  <!-- New Section for User Interaction -->
+  <section class="feedback-section">
+    <h2>أرسل ملاحظاتك</h2>
+    <form id="feedback-form" action="https://formspree.io/f/xanqrwzy" method="POST">
+      <div class="input-group">
+        <input type="text" id="user-name" name="name" placeholder="اسمك" required>
+      </div>
+      <div class="input-group">
+        <input type="email" id="user-email" name="email" placeholder="البريد الإلكتروني" required>
+      </div>
+      <div class="input-group">
+        <textarea id="user-message" name="message" placeholder="ملاحظاتك..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">إرسال</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 جميع الحقوق محفوظة</p>
+  </footer>
 
   <script src="particles.min.js"></script>
   <script src="script.js"></script>
