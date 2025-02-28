@@ -1,87 +1,59 @@
-// تهيئة الجسيمات
+// تهيئة الجسيمات المتقدمة
 particlesJS('particles-js', {
   particles: {
-    number: { value: 80, density: { enable: true, value_area: 800 } },
+    number: { value: 100 },
     color: { value: "#ffffff" },
     shape: { type: "circle" },
     opacity: { value: 0.5 },
     size: { value: 3, random: true },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#ffffff",
-      opacity: 0.2,
-      width: 1
-    },
     move: {
       enable: true,
-      speed: 4,
+      speed: 5,
       direction: "none",
       out_mode: "out",
       bounce: false
     }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: "repulse" },
-      onclick: { enable: true, mode: "push" }
-    }
   }
 });
 
-// إدارة النموذج
-const contactForm = document.getElementById('contactForm');
-const resultMessage = document.getElementById('formResult');
-
-contactForm.addEventListener('submit', async (e) => {
+// إدارة النموذج بدون إعادة تحميل
+document.getElementById('myForm').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const submitBtn = contactForm.querySelector('.submit-btn');
-  submitBtn.disabled = true;
-  submitBtn.querySelector('.loading-dots').style.opacity = '1';
+  const form = e.target;
+  const status = document.querySelector('.form-status');
+  
+  status.textContent = 'جاري الإرسال...';
+  status.style.color = 'gold';
 
   try {
-    const formData = new FormData(contactForm);
     const response = await fetch('https://formspree.io/f/xjkgnkdy', {
       method: 'POST',
-      body: formData,
+      body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     });
 
     if (response.ok) {
-      showResultMessage('✅ تم الإرسال بنجاح! سنرد في أقرب وقت', 'success');
-      contactForm.reset();
+      status.innerHTML = '✅ تم الإرسال بنجاح!';
+      form.reset();
     } else {
       throw new Error('فشل في الإرسال');
     }
   } catch (error) {
-    showResultMessage(`❌ خطأ: ${error.message}`, 'error');
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.querySelector('.loading-dots').style.opacity = '0';
+    status.innerHTML = `❌ ${error.message}`;
+    status.style.color = 'red';
   }
 });
 
-function showResultMessage(text, type) {
-  resultMessage.textContent = text;
-  resultMessage.className = `result-message ${type}`;
-  setTimeout(() => resultMessage.textContent = '', 5000);
-}
-
-// زر العودة للأعلى
-window.addEventListener('scroll', () => {
-  const scrollBtn = document.getElementById('scrollTop');
-  window.scrollY > 300 
-    ? scrollBtn.classList.add('show')
-    : scrollBtn.classList.remove('show');
-});
-
-document.getElementById('scrollTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// التحقق من البريد الإلكتروني أثناء الكتابة
-document.getElementById('emailAddress').addEventListener('input', (e) => {
+// التحقق الحيوي من البريد
+document.getElementById('userEmail').addEventListener('input', (e) => {
+  const icon = e.target.parentElement.querySelector('.validation-icon');
   const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value);
-  e.target.style.borderColor = isValid ? '#2ecc71' : '#e74c3c';
+  icon.style.background = isValid ? '#2ecc71' : '#e74c3c';
+});
+
+// عداد الحروف
+document.getElementById('userMessage').addEventListener('input', (e) => {
+  const counter = e.target.parentElement.querySelector('.char-counter');
+  counter.textContent = `${e.target.value.length}/500`;
+  counter.style.color = e.target.value.length > 450 ? '#e74c3c' : '#fff';
 });
