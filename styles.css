@@ -1,4 +1,4 @@
-/* إعدادات عامة */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -11,9 +11,11 @@ body {
   color: #fff;
   text-align: center;
   padding: 20px;
+  overflow-x: hidden;
   transition: background 1s ease-in-out;
 }
 
+/* Header */
 header {
   margin-bottom: 30px;
   animation: fadeIn 2s ease-in-out;
@@ -22,7 +24,7 @@ header {
 h1 {
   font-size: 3rem;
   color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -31,7 +33,7 @@ p {
   margin-bottom: 20px;
 }
 
-/* تحسين الأزرار */
+/* Contact Links Section */
 .contact-btn {
   display: inline-block;
   padding: 15px 30px;
@@ -62,7 +64,7 @@ p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* نموذج الاتصال */
+/* Form Section */
 .form-section {
   margin-top: 40px;
   animation: slideUp 1s ease-out;
@@ -116,14 +118,14 @@ textarea {
   transform: scale(1.05);
 }
 
-/* التذييل */
+/* Footer */
 footer {
   margin-top: 40px;
   font-size: 1rem;
   color: #ecf0f1;
 }
 
-/* تأثيرات */
+/* Animations */
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
