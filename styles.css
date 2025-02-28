@@ -7,12 +7,18 @@
 
 body {
   font-family: 'Cairo', sans-serif;
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  background: linear-gradient(45deg, #2c3e50, #3498db);
   color: #fff;
   text-align: center;
   padding: 20px;
   overflow-x: hidden;
-  transition: background 1s ease-in-out;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -44,12 +50,24 @@ p {
   text-decoration: none;
   background-color: #4CAF50;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-btn:hover {
-  background-color: #45a049;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.contact-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2));
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.contact-btn:hover::after {
+  transform: translateX(100%) rotate(45deg);
 }
 
 .telegram {
@@ -80,17 +98,17 @@ input, textarea {
   width: 100%;
   padding: 12px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
   font-size: 1rem;
-  background-color: #34495e;
+  background: rgba(255, 255, 255, 0.1);
   color: #ecf0f1;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 input:focus, textarea:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  border-color: #e74c3c;
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.3);
 }
 
 textarea {
@@ -119,12 +137,18 @@ textarea {
   position: fixed;
   bottom: 50px;
   right: 30px;
-  background-color: #3498db;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
   color: white;
   padding: 15px;
   border-radius: 50%;
   display: none;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+  transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+  transform: scale(1.1);
 }
 
 /* Footer */
