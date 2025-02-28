@@ -114,6 +114,19 @@ textarea {
   transform: scale(1.05);
 }
 
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  background-color: #3498db;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
 /* Footer */
 footer {
   margin-top: 40px;
@@ -155,12 +168,4 @@ footer {
   transition: opacity 0.3s ease;
   visibility: visible;
   opacity: 1;
-}
-
-/* Particle Background */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
