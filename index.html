@@ -5,40 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع شاهين</title>
     <link rel="stylesheet" href="style.css">
+    <!-- particles.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
 </head>
 <body>
-
     <!-- البار العلوي -->
-    <div class="navbar">
+    <nav class="navbar sticky">
         <div class="logo">شاهين</div>
-        <div>
+        <div class="nav-links">
             <a href="courses.html">كورسات</a>
             <a href="https://www.instagram.com/s2a2222" target="_blank">إنستا</a>
             <a href="https://t.me/s2a22" target="_blank">تيلي</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- القسم الرئيسي -->
-    <div class="hero">
-        <h1>مرحبًا بك في موقع شاهين</h1>
-        <p>هنا تجد كل ما تحتاجه من موارد تعليمية وأكثر!</p>
-        <div class="icons">
-            <span class="icon" onclick="changeIconColor(this)">💻</span>
-            <span class="icon" onclick="changeIconColor(this)">📱</span>
-            <span class="icon" onclick="changeIconColor(this)">📚</span>
+    <!-- القسم الرئيسي مع خلفية متحركة -->
+    <div id="hero" class="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="animate-text">مرحبًا بك في موقع شاهين</h1>
+            <p>هنا تجد كل ما تحتاجه من موارد تعليمية وأكثر!</p>
+            <div class="icons">
+                <span class="icon" onclick="changeIconColor(this)">💻</span>
+                <span class="icon" onclick="changeIconColor(this)">📱</span>
+                <span class="icon" onclick="changeIconColor(this)">📚</span>
+            </div>
         </div>
     </div>
 
     <!-- نموذج التواصل -->
     <div class="contact-form">
         <h2>تواصل معنا</h2>
-        <form action="https://formspree.io/f/xjkgnkdy" method="POST">
+        <form id="contactForm">
             <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
             <textarea name="message" placeholder="اكتب رسالتك هنا" rows="5" required></textarea>
             <button type="submit">إرسال</button>
+            <div id="formMessage"></div>
         </form>
     </div>
 
+    <!-- تضمين المكتبات -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
