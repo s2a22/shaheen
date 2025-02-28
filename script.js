@@ -1,23 +1,19 @@
-// ميزة النص المتغير في الهيدر
-const phrases = ["أهلاً بك في موقعي", "تواصل معي بسهولة", "مرحبًا بك، لا تتردد في الاتصال"];
-let currentPhrase = 0;
-setInterval(() => {
-    document.getElementById("dynamic-text").textContent = phrases[currentPhrase];
-    currentPhrase = (currentPhrase + 1) % phrases.length;
-}, 3000);
-
-// تأثير ظهور سلس عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.style.opacity = "1";
-});
-
-// تفعيل زر تبديل الوضع (Dark/Light Mode)
-document.getElementById('mode-toggle').addEventListener('click', function() {
-    document.body.classList.toggle('light-mode');
-});
-
-// تأثير حركة عند النقر على زر الإرسال (ميزة جديدة)
-document.querySelector('.submit-btn').addEventListener('click', function() {
-    this.classList.add('clicked');
-    setTimeout(() => this.classList.remove('clicked'), 500);
+// إضافة مستمع للأحداث لمنع إعادة تحميل الصفحة
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة عند إرسال النموذج
+    
+    // إرسال النموذج باستخدام Fetch API أو AJAX
+    fetch(event.target.action, {
+        method: 'POST',
+        body: new FormData(event.target)
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("تم إرسال الرسالة بنجاح!");
+            event.target.reset();
+        } else {
+            alert("فشل في إرسال الرسالة. حاول مرة أخرى.");
+        }
+    })
+    .catch(error => alert("حدث خطأ أثناء إرسال الرسالة: " + error));
 });
