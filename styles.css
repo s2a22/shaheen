@@ -1,12 +1,12 @@
+/* متغيرات التصميم */
 :root {
-  --primary-color: #e74c3c;
-  --secondary-color: #2c3e50;
-  --accent-color: #3498db;
-  --text-light: #ecf0f1;
-  --gradient-bg: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  --primary: #ff6b6b;
+  --secondary: #4ecdc4;
+  --dark: #2d3436;
+  --gradient-bg: linear-gradient(135deg, #2d3436 0%, #4ecdc4 100%);
 }
 
-/* إعادة الضبط الأساسي */
+/* التصميم العام */
 * {
   margin: 0;
   padding: 0;
@@ -17,220 +17,162 @@
 body {
   background: var(--gradient-bg);
   background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
-  color: var(--text-light);
-  line-height: 1.6;
-  overflow-x: hidden;
+  animation: galaxyFlow 20s infinite;
+  min-height: 100vh;
+  color: white;
 }
 
-@keyframes gradientFlow {
+@keyframes galaxyFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* المحتوى الرئيسي */
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-/* روابط التواصل */
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin: 3rem 0;
-}
-
-.social-card {
-  position: relative;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-}
-
-.social-card:hover {
-  transform: translateY(-5px);
-}
-
-.social-card i {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.telegram { background: linear-gradient(45deg, #2AABEE, #229ED9); }
-.instagram { background: linear-gradient(45deg, #E4405F, #C13584); }
-
-.wave-effect {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.2);
-  width: 50px;
+/* طبقة الجسيمات */
+#particles-js {
+  position: fixed;
+  width: 100%;
   height: 100%;
-  left: -60px;
-  top: 0;
-  transform: skewX(-15deg);
-  animation: wave 2s infinite;
+  z-index: 0;
 }
 
-@keyframes wave {
-  to { left: 110%; }
-}
-
-/* النموذج */
-.contact-form-section {
-  background: rgba(0, 0, 0, 0.1);
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 2rem;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
 }
 
-.form-group {
+/* التصميم الذكي للنموذج */
+.smart-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.input-box {
   position: relative;
   margin: 2rem 0;
 }
 
-.form-group input,
-.form-group textarea {
+.input-box input,
+.input-box textarea {
   width: 100%;
-  padding: 1rem;
+  padding: 1.2rem;
   border: none;
-  background: transparent;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  color: white;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
-.form-group textarea {
-  height: 150px;
-  resize: vertical;
-}
-
-.form-group label {
+.input-box label {
   position: absolute;
-  left: 1rem;
-  top: 1rem;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
   opacity: 0.7;
 }
 
-.form-group input:focus ~ label,
-.form-group input:valid ~ label,
-.form-group textarea:focus ~ label,
-.form-group textarea:valid ~ label {
-  transform: translateY(-25px);
+.input-box input:focus ~ label,
+.input-box input:valid ~ label,
+.input-box textarea:focus ~ label,
+.input-box textarea:valid ~ label {
+  transform: translateY(-2rem);
   font-size: 0.9rem;
   opacity: 1;
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
-.underline {
+/* تأثير البلازما */
+.plasma-effect .glow {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary-color);
-  transition: width 0.4s ease;
+  inset: 0;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  z-index: -1;
+  filter: blur(20px);
+  opacity: 0.3;
+  animation: plasmaPulse 3s infinite;
 }
 
-.form-group input:focus ~ .underline,
-.form-group textarea:focus ~ .underline {
-  width: 100%;
+@keyframes plasmaPulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
 }
 
-/* زر الإرسال */
-.submit-btn {
+/* زر الإرسال السحري */
+.magic-btn {
   position: relative;
-  padding: 1rem 2.5rem;
-  background: var(--primary-color);
+  padding: 1rem 3rem;
   border: none;
   border-radius: 50px;
+  background: var(--primary);
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
-.submit-btn:hover {
+.magic-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
 }
 
-.loading-dots {
+.sparkles {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+  inset: 0;
+  background: radial-gradient(circle, white 10%, transparent 20%);
+  animation: sparkle 1s infinite;
 }
 
-/* الرسائل الناتجة */
-.result-message {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
+@keyframes sparkle {
+  to { transform: translateY(-100%); }
 }
 
-/* الزر العائم */
-.scroll-top-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
+/* الأيقونات الهولوغرامية */
+.hologram-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.hologram-icon {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: var(--primary-color);
-  border: none;
-  color: white;
-  cursor: pointer;
-  opacity: 0;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  position: relative;
+  transition: all 0.3s;
 }
 
-.scroll-top-btn.show {
-  opacity: 1;
-}
-
-/* الجسيمات */
-#particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.hologram-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #00ffff 0deg,
+    #ff00ff 180deg,
+    #00ffff 360deg
+  );
+  animation: hologramSpin 3s linear infinite;
+  opacity: 0.7;
   z-index: -1;
 }
 
-/* الوسائط المتجاوبة */
-@media (max-width: 768px) {
-  .title { font-size: 2.5rem; }
-  .social-grid { grid-template-columns: 1fr; }
+@keyframes hologramSpin {
+  to { transform: rotate(360deg); }
 }
