@@ -3,35 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معي</title>
+  <title>شاهين - تواصل معي</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
   <!-- خلفية متحركة باستخدام particles.js -->
   <div id="particles-js"></div>
 
-  <!-- شريط تنقل ثابت (Sticky Navbar) -->
+  <!-- شريط تنقل ثابت -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="#home" class="brand">شاهين</a>
       <ul class="nav-links">
-        <li><a href="tel:0945251594">اتصل بنا</a></li>
+        <li><a href="#home">الرئيسية</a></li>
         <li><a href="courses.html">كورسات</a></li>
         <li><a href="#about">حول الموقع</a></li>
+        <li><a href="#contact">تواصل</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- قسم الهيدر -->
   <header id="home">
-    <h1>تواصل معي</h1>
-    <p>أنا هنا للرد على استفساراتك! تواصل معي عبر الوسائل التالية أو عبر النموذج أدناه.</p>
+    <h1>مرحبا بكم في موقع شاهين</h1>
+    <p>موقع احترافي للتواصل مع شاهين، وتعرف على كورسات ومحتوى جديد قريباً.</p>
   </header>
 
-  <!-- قسم روابط التواصل -->
+  <!-- قسم روابط التواصل الاجتماعي -->
   <section class="contact-links">
     <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram" data-tooltip="تواصل عبر تيليجرام">
       <i class="fab fa-telegram-plane icon"></i> تيليجرام
@@ -41,8 +41,14 @@
     </a>
   </section>
 
-  <!-- قسم تواصل الرسائل (Feedback Section) -->
-  <section class="feedback-section" id="about">
+  <!-- قسم حول الموقع -->
+  <section id="about" class="about-section">
+    <h2>حول الموقع</h2>
+    <p>هذا الموقع يقدم لك وسيلة تواصل احترافية مع شاهين، بالإضافة إلى عرض كورسات ومحتوى جديد قادم قريباً.</p>
+  </section>
+
+  <!-- قسم تواصل الرسائل (نموذج) -->
+  <section id="contact" class="feedback-section">
     <h2>أرسل رسالتك</h2>
     <form id="feedback-form" action="https://formspree.io/f/xjkgnkdy" method="POST">
       <div class="input-group">
@@ -59,12 +65,24 @@
     <div id="response-message"></div>
   </section>
 
+  <!-- قسم الاشتراك في النشرة البريدية -->
+  <section id="newsletter" class="newsletter-section">
+    <h2>اشترك في النشرة البريدية</h2>
+    <form id="newsletter-form">
+      <div class="input-group">
+        <input type="email" id="newsletter-email" placeholder="أدخل بريدك الإلكتروني" required>
+      </div>
+      <button type="submit" class="submit-btn">اشترك</button>
+    </form>
+    <div id="newsletter-response"></div>
+  </section>
+
   <!-- زر الرجوع للأعلى -->
   <button id="back-to-top" class="back-to-top">↑</button>
 
   <!-- التذييل -->
   <footer>
-    <p>&copy; 2025 جميع الحقوق محفوظة</p>
+    <p>&copy; 2025 جميع الحقوق محفوظة - شاهين</p>
   </footer>
 
   <script src="particles.min.js"></script>
