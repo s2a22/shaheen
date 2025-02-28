@@ -10,7 +10,7 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
     newsletterResponse.innerHTML = "البريد الإلكتروني غير صحيح. يرجى إدخال بريد صحيح.";
     newsletterResponse.style.color = "red";
   } else {
-    // يمكن إضافة وظيفة إرسال بريد إلكتروني حقيقي هنا
+    // هنا يمكن إرسال رسالة بريد إلكتروني حقيقية
     newsletterResponse.innerHTML = "شكرًا لك على الاشتراك في النشرة البريدية!";
     newsletterResponse.style.color = "#27ae60";
   }
