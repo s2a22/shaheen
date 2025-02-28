@@ -15,14 +15,6 @@ body {
   transition: background 1s ease-in-out;
 }
 
-/* خلفية particles خلف المحتوى */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
 /* شريط التنقل */
 .navbar {
   position: fixed;
@@ -61,8 +53,10 @@ body {
   list-style: none;
   display: flex;
   gap: 15px;
+  transition: all 0.3s ease;
 }
 
+/* روابط قائمة التنقل */
 .navbar .nav-links a {
   color: #ecf0f1;
   text-decoration: none;
@@ -78,123 +72,57 @@ body {
   color: white;
 }
 
+/* أيقونة الثلاث خطوط (Hamburger Icon) */
+.hamburger-icon {
+  display: none; /* مخفية في الأجهزة الكبيرة */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger-icon .line {
+  width: 100%;
+  height: 4px;
+  background-color: #ecf0f1;
+  border-radius: 2px;
+}
+
 /* تحسين التباعد على الشاشات الصغيرة */
 @media (max-width: 768px) {
   .navbar .nav-links {
+    display: none; /* مخفية عند استخدام الهاتف */
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    padding-top: 10px;
-  }
-
-  .navbar .brand {
-    font-size: 1.4rem;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding-top: 20px;
   }
 
   .navbar .nav-links a {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 10px 20px;
+  }
+
+  /* إظهار أيقونة الثلاث خطوط */
+  .hamburger-icon {
+    display: flex;
   }
 }
 
-/* قسم الهيدر */
-header {
-  margin-top: 100px;
-  animation: fadeIn 2s ease-in-out;
+/* عند تفعيل القائمة */
+.nav-links.active {
+  display: flex;
 }
 
-header h1 {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #bdc3c7;
-  margin-bottom: 30px;
-}
-
-/* قسم تواصل الرسائل (نموذج) */
-.feedback-section {
-  margin-top: 50px;
-  background-color: #2c3e50;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.feedback-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.input-group {
-  margin: 15px 0;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #34495e;
-  color: #ecf0f1;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus, textarea:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
-}
-
-textarea {
-  height: 150px;
-}
-
-.submit-btn {
-  padding: 12px 30px;
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: white;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-
-/* زر الرجوع للأعلى */
-#back-to-top {
-  position: fixed;
-  bottom: 50px;
-  right: 30px;
+/* تحسين التنقل بين الروابط */
+.navbar .nav-links a:hover {
   background-color: #3498db;
-  color: #fff;
-  padding: 15px;
-  border-radius: 50%;
-  display: none;
-  cursor: pointer;
+  color: white;
 }
 
-/* التذييل */
-footer {
-  margin-top: 40px;
-  font-size: 1rem;
-  color: #ecf0f1;
-}
-
-/* تأثيرات الحركة */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
