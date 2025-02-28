@@ -10,20 +10,26 @@
 </head>
 <body>
 
+  <!-- Background Particles -->
+  <div id="particles-js"></div>
+
+  <!-- Header Section -->
   <header>
     <h1>تواصل معي</h1>
     <p>أنا هنا للرد على استفساراتك! تواصل معي عبر الوسائل التالية أو عبر النموذج.</p>
   </header>
 
+  <!-- Contact Links -->
   <section class="contact-links">
-    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram">
-      <i class="fab fa-telegram-plane"></i> تيليجرام
+    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram" data-tooltip="تواصل عبر تيليجرام">
+      <i class="fab fa-telegram-plane icon"></i> تيليجرام
     </a>
-    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram">
-      <i class="fab fa-instagram"></i> إنستجرام
+    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram" data-tooltip="تواصل عبر إنستجرام">
+      <i class="fab fa-instagram icon"></i> إنستجرام
     </a>
   </section>
 
+  <!-- Form Section -->
   <section class="form-section">
     <h2>أرسل رسالة</h2>
     <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
@@ -41,10 +47,12 @@
     <div id="response-message"></div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 جميع الحقوق محفوظة</p>
   </footer>
 
+  <script src="particles.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
