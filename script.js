@@ -1,8 +1,7 @@
-// إضافة مستمع للأحداث لمنع إعادة تحميل الصفحة
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // منع إعادة تحميل الصفحة عند إرسال النموذج
+    event.preventDefault();
     
-    // إرسال النموذج باستخدام Fetch API أو AJAX
+    // إرسال النموذج عبر Fetch API
     fetch(event.target.action, {
         method: 'POST',
         body: new FormData(event.target)
