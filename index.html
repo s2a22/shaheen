@@ -3,85 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معنا</title>
+  <title>تواصل معي</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- الخلفية المتحركة -->
-  <div id="particles-js"></div>
 
-  <!-- شريط التنقل -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="brand">شاهين</a>
-      <ul class="nav-links">
-        <li><a href="#about">حول الموقع</a></li>
-        <li><a href="#contact">اتصل بنا</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <h1>تواصل معي</h1>
+    <p>يسعدني تواصلك عبر الوسائل التالية أو إرسال رسالة عبر النموذج:</p>
+  </header>
 
-  <!-- المحتوى -->
-  <div class="container">
-    <header>
-      <h1 class="animated-title">
-        <span>لنتواصل</span>
-        <span class="animated-subtitle">معًا</span>
-      </h1>
-      <p class="header-description" id="dynamic-text">تواصل معي عبر المنصات التالية:</p>
-    </header>
+  <section class="contact-links">
+    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram">
+      <i class="fab fa-telegram-plane"></i> تيليجرام
+    </a>
+    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram">
+      <i class="fab fa-instagram"></i> إنستجرام
+    </a>
+  </section>
 
-    <!-- قسم حول الموقع -->
-    <section id="about" class="about-section">
-      <h2>حول الموقع</h2>
-      <p>هذا الموقع يوفر لك وسيلة سريعة للتواصل معي .</p>
-    </section>
+  <section class="form-section">
+    <h2>أرسل رسالة</h2>
+    <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
+      <div class="input-group">
+        <input type="text" id="name" name="name" required placeholder="اسمك الكريم">
+      </div>
+      <div class="input-group">
+        <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني">
+      </div>
+      <div class="input-group">
+        <textarea id="message" name="message" required placeholder="رسالتك ..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">إرسال الرسالة</button>
+    </form>
+  </section>
 
-    <!-- روابط التواصل -->
-    <div class="contact-links">
-      <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram">
-        <i class="fab fa-telegram-plane"></i>
-        <span>تيليجرام</span>
-      </a>
-      <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram">
-        <i class="fab fa-instagram"></i>
-        <span>إنستجرام</span>
-      </a>
-    </div>
-
-    <!-- نموذج الاتصال -->
-    <section class="form-section" id="contact">
-      <h2>أو أرسل رسالة</h2>
-      <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
-        <div class="input-group">
-          <input type="text" id="name" name="name" required class="animated-input" placeholder="اسمك الكريم">
-          <i class="fas fa-user input-icon"></i>
-        </div>
-        <div class="input-group">
-          <input type="email" id="email" name="email" required class="animated-input" placeholder="البريد الإلكتروني">
-          <i class="fas fa-envelope input-icon"></i>
-        </div>
-        <div class="input-group">
-          <textarea id="message" name="message" required class="animated-input" placeholder="رسالتك ..."></textarea>
-          <i class="fas fa-comment-dots input-icon"></i>
-        </div>
-        <button type="submit" class="submit-btn">إرسال الرسالة</button>
-      </form>
-    </section>
-
-    <footer>
-      <p>&copy; s2a22 جميع الحقوق محفوظة</p>
-    </footer>
-  </div>
+  <footer>
+    <p>&copy; 2025 جميع الحقوق محفوظة</p>
+  </footer>
 
   <script src="script.js"></script>
-  <script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('تم تحميل الجسيمات');
-    });
-  </script>
 </body>
 </html>
