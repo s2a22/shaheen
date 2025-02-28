@@ -1,12 +1,10 @@
-// Handle form submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent page reload on form submit
+// معالجة إرسال النموذج في قسم تواصل الرسائل
+document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
 
-    // Show response message after form submission
     const responseMessage = document.getElementById('response-message');
     responseMessage.innerHTML = "جاري إرسال الرسالة...";
 
-    // Send form data using Fetch API to Formspree
     fetch(event.target.action, {
         method: 'POST',
         body: new FormData(event.target)
@@ -22,11 +20,10 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
     });
 
-    // Reset the form after submission
     this.reset();
 });
 
-// Initialize particles.js
+// تهيئة particles.js للخلفية المتحركة
 particlesJS('particles-js', {
   particles: {
     color: { value: "#ffffff" },
@@ -36,19 +33,6 @@ particlesJS('particles-js', {
   }
 });
 
-// Show Back-to-Top button when scrolling
-window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        document.getElementById('back-to-top').style.display = "block";
-    } else {
-        document.getElementById('back-to-top').style.display = "none";
-    }
-};
-
-// Scroll to the top when clicking Back-to-Top button
-document.getElementById('back-to-top').onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 // إظهار زر الرجوع للأعلى عند التمرير
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -58,12 +42,12 @@ window.onscroll = function() {
     }
 };
 
-// العودة للأعلى عند الضغط على الزر
+// العودة للأعلى عند الضغط على زر الرجوع
 document.getElementById('back-to-top').onclick = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// تحسين التنقل في الموقع عبر الكمبيوتر
+// تفعيل التمرير السلس للروابط الداخلية في شريط التنقل
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function(event) {
         if (this.getAttribute('href').startsWith('#')) {
@@ -73,4 +57,3 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         }
     });
 });
-
