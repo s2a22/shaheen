@@ -1,38 +1,38 @@
-// تهيئة خلفية particles.js داكنة
+// تهيئة particles.js مع إعدادات محسنة
 particlesJS('particles-js', {
   particles: {
-    color: { value: "#4a4a4a" }, // لون رمادي غامق
+    number: { value: 120 },
+    color: { value: "#3498db" },
     opacity: { value: 0.7 },
-    size: { value: 3 },
+    size: { value: 2.5 },
     line_linked: {
-      color: "#5a5a5a",
-      width: 1
+      color: "#2980b9",
+      width: 1,
+      opacity: 0.4
     }
   }
 });
 
-// إصلاح إرسال الرسائل
+// تحسين رسائل النموذج
 function handleSubmit(event) {
   event.preventDefault();
-  const responseMessage = document.getElementById('response-message');
+  const response = document.getElementById('response-message');
   
   fetch(event.target.action, {
     method: 'POST',
     body: new FormData(event.target)
   })
-  .then(response => {
-    if (response.ok) {
-      responseMessage.innerHTML = "✅ تم الإرسال بنجاح!";
-      responseMessage.style.color = "#2ecc71";
-      document.getElementById('feedback-form').style.display = 'none';
+  .then(res => {
+    if (res.ok) {
+      response.innerHTML = "🎉 تم إرسال رسالتك بنجاح! سنرد في أقرب وقت";
+      response.style.background = "rgba(46, 204, 113, 0.15)";
+      document.getElementById('feedback-form').reset();
     } else {
-      throw new Error('فشل الإرسال');
+      throw new Error();
     }
   })
   .catch(() => {
-    responseMessage.innerHTML = "❌ حدث خطأ، حاول مرة أخرى!";
-    responseMessage.style.color = "#e74c3c";
+    response.innerHTML = "⚠️ حدث خطأ غير متوقع، يرجى المحاولة لاحقاً";
+    response.style.background = "rgba(231, 76, 60, 0.15)";
   });
-  
-  event.target.reset();
 }
