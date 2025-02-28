@@ -1,186 +1,67 @@
-/* إعادة تعيين عامة */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(45deg, #2c3e50, #34495e);
-  color: #ecf0f1;
-  text-align: center;
-  padding: 20px;
-  overflow-x: hidden;
-  transition: background 1s ease-in-out;
-}
-
-/* خلفية particles خلف المحتوى */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* شريط التنقل */
+/* أنماط شريط التنقل الجديد */
 .navbar {
-  position: fixed;
-  top: 0;
+  background: rgba(0, 0, 0, 0.9) !important;
+  padding: 15px 0 !important;
+}
+
+.nav-links {
+  gap: 30px !important;
+}
+
+.nav-links a {
+  font-size: 1.1rem !important;
+  padding: 8px 20px !important;
+  border: 2px solid transparent !important;
+}
+
+.nav-links a:hover {
+  border-color: #3498db !important;
+  background: transparent !important;
+}
+
+/* أنماط النموذج الاحترافية */
+.feedback-section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.input-group input, 
+.input-group textarea {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-/* الحاوية الداخلية لشريط التنقل */
-.nav-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* شعار الموقع (شاهين) */
-.navbar .brand {
-  color: #ecf0f1;
-  font-size: 1.6rem;
-  text-decoration: none;
-  font-weight: bold;
-  padding-left: 10px;
-}
-
-/* قائمة الروابط */
-.navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-}
-
-.navbar .nav-links a {
-  color: #ecf0f1;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 5px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.navbar .nav-links a:hover {
-  background-color: #3498db;
-  color: white;
-}
-
-/* أيقونة الثلاث خطوط (Hamburger Icon) */
-.hamburger-icon {
-  display: none; /* مخفية في الأجهزة الكبيرة */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-}
-
-.hamburger-icon .line {
-  width: 100%;
-  height: 4px;
-  background-color: #ecf0f1;
-  border-radius: 2px;
-}
-
-/* تحسين التباعد على الشاشات الصغيرة */
-@media (max-width: 768px) {
-  .navbar .nav-links {
-    display: none; /* مخفية عند استخدام الهاتف */
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    padding-top: 20px;
-  }
-
-  .navbar .nav-links a {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-  }
-
-  /* إظهار أيقونة الثلاث خطوط */
-  .hamburger-icon {
-    display: flex;
-  }
-}
-
-/* عند تفعيل القائمة */
-.nav-links.active {
-  display: flex;
-}
-
-/* تحسين التنقل بين الروابط */
-.navbar .nav-links a:hover {
-  background-color: #3498db;
-  color: white;
-}
-/* إضافات خاصة بصفحة الكورسات */
-.courses-container {
-  padding: 100px 20px;
-  text-align: center;
-  min-height: 100vh;
-}
-
-#soon-message {
-  font-size: 3.5rem;
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.coming-soon-text {
-  font-size: 1.8rem;
-  color: #bdc3c7;
-  margin-bottom: 50px;
-}
-
-.back-btn {
-  display: inline-block;
-  background: #3498db;
-  color: white;
-  padding: 15px 40px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1.2rem;
+  padding: 12px 20px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.back-btn:hover {
-  background: #2980b9;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+.input-group input:focus,
+.input-group textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
 }
 
-/* تعديلات الجوال لشريط التنقل */
-@media (max-width: 768px) {
-  .navbar .nav-links {
-    top: 60px;
-    padding: 15px 0;
-  }
-  
-  .navbar .nav-links a {
-    font-size: 1.3rem;
-  }
-  
-  .hamburger-icon {
-    width: 35px;
-    height: 30px;
-  }
+.submit-btn {
+  background: linear-gradient(45deg, #3498db, #2980b9) !important;
+  padding: 15px 40px !important;
+  border: none !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4) !important;
+}
+
+#response-message {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
 }
