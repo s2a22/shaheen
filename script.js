@@ -1,58 +1,38 @@
-// وظيفة لتبديل حالة القائمة (الظهور/الإخفاء) عند الضغط على الثلاث خطوط
-function toggleMenu() {
-  const navLinks = document.getElementById("nav-links");
-  navLinks.classList.toggle("active");
-}
+// تهيئة خلفية particles.js داكنة
+particlesJS('particles-js', {
+  particles: {
+    color: { value: "#4a4a4a" }, // لون رمادي غامق
+    opacity: { value: 0.7 },
+    size: { value: 3 },
+    line_linked: {
+      color: "#5a5a5a",
+      width: 1
+    }
+  }
+});
 
-// معالجة إرسال نموذج تواصل الرسائل
+// إصلاح إرسال الرسائل
 function handleSubmit(event) {
-  event.preventDefault(); // منع إعادة تحميل الصفحة
-
+  event.preventDefault();
   const responseMessage = document.getElementById('response-message');
-  responseMessage.innerHTML = "تم إرسال الرسالة بنجاح! شكراً لتواصلك معنا.";
-
-  // إخفاء النموذج بعد إرسال الرسالة
-  document.getElementById('feedback-form').style.display = 'none';
-
-  // إرسال البيانات إلى Formspree
+  
   fetch(event.target.action, {
     method: 'POST',
     body: new FormData(event.target)
   })
   .then(response => {
     if (response.ok) {
-      console.log("تم إرسال الرسالة بنجاح");
+      responseMessage.innerHTML = "✅ تم الإرسال بنجاح!";
+      responseMessage.style.color = "#2ecc71";
+      document.getElementById('feedback-form').style.display = 'none';
     } else {
-      responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
+      throw new Error('فشل الإرسال');
     }
   })
-  .catch(error => {
-    responseMessage.innerHTML = "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى.";
+  .catch(() => {
+    responseMessage.innerHTML = "❌ حدث خطأ، حاول مرة أخرى!";
+    responseMessage.style.color = "#e74c3c";
   });
-
-  // إعادة تعيين النموذج
+  
   event.target.reset();
 }
-
-// تهيئة particles.js للخلفية المتحركة
-particlesJS('particles-js', {
-  particles: {
-    color: { value: "#ffffff" },
-    shape: { type: "circle" },
-    number: { value: 80 },
-    size: { value: 3 }
-  }
-});
-
-// زر الرجوع للأعلى: إظهاره عند التمرير
-window.onscroll = function() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById('back-to-top').style.display = "block";
-  } else {
-    document.getElementById('back-to-top').style.display = "none";
-  }
-};
-
-document.getElementById('back-to-top').onclick = function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
