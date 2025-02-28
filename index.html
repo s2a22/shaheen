@@ -10,8 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- الخلفيات -->
-  <div class="animated-background"></div>
+  <!-- الخلفية المتحركة -->
   <div id="particles-js"></div>
 
   <!-- شريط التنقل -->
@@ -19,13 +18,9 @@
     <div class="nav-container">
       <a href="#" class="brand">شاهين</a>
       <ul class="nav-links">
-        <!-- تم حذف قسم "الرئيسية" من القائمة -->
         <li><a href="#about">حول الموقع</a></li>
         <li><a href="#contact">اتصل بنا</a></li>
       </ul>
-      <button id="mode-toggle" class="mode-toggle" title="تبديل الوضع">
-        <i class="fas fa-adjust"></i>
-      </button>
     </div>
   </nav>
 
@@ -36,17 +31,14 @@
         <span>لنتواصل</span>
         <span class="animated-subtitle">معًا</span>
       </h1>
-      <!-- نص متغير يظهر عبارات مختلفة كل فترة لجذب الانتباه (ميزة جديدة) -->
       <p class="header-description" id="dynamic-text">تواصل معي عبر المنصات التالية متواجده حاليا:</p>
     </header>
 
-    <!-- قسم حول الموقع -->
     <section id="about" class="about-section">
       <h2>حول الموقع</h2>
       <p>هذا الموقع يوفر لك وسيلة سريعة للتواصل معي .</p>
     </section>
 
-    <!-- روابط التواصل -->
     <div class="contact-links">
       <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram">
         <i class="fab fa-telegram-plane"></i>
@@ -58,7 +50,6 @@
       </a>
     </div>
 
-    <!-- نموذج الاتصال -->
     <section class="form-section" id="contact">
       <h2>أو أرسل رسالة</h2>
       <form id="contact-form" action="https://formspree.io/f/xanqrwzy" method="POST">
@@ -74,7 +65,6 @@
           <textarea id="message" name="message" required class="animated-input" placeholder="رسالتك ..."></textarea>
           <i class="fas fa-comment-dots input-icon"></i>
         </div>
-        <!-- تم إضافة تأثير حركة عند النقر على زر الإرسال -->
         <button type="submit" class="submit-btn">إرسال الرسالة</button>
       </form>
     </section>
@@ -84,7 +74,6 @@
     </footer>
   </div>
 
-  <!-- سكربت particles -->
   <script src="script.js"></script>
   <script>
     particlesJS.load('particles-js', 'particles.json', function() {
@@ -92,5 +81,4 @@
     });
   </script>
 </body>
-            </html>
-            
+</html>
