@@ -29,7 +29,7 @@ body {
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 15px 0;
+  padding: 10px 0; /* تقليص الحواف لتناسب الهواتف */
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -50,22 +50,24 @@ body {
 /* شعار الموقع (شاهين) */
 .navbar .brand {
   color: #ecf0f1;
-  font-size: 2rem;
+  font-size: 2rem; /* تحسين حجم الخط */
   text-decoration: none;
   font-weight: bold;
+  padding-left: 10px;
 }
 
 /* قائمة الروابط */
 .navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 15px; /* تقليص التباعد بين العناصر */
 }
 
+/* روابط قائمة التنقل */
 .navbar .nav-links a {
   color: #ecf0f1;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem; /* تقليص حجم الخط */
   font-weight: 500;
   padding: 5px 15px;
   border-radius: 5px;
@@ -83,10 +85,17 @@ body {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    padding-top: 10px; /* تقليص المسافة عند التمرير */
   }
 
   .navbar .brand {
     font-size: 1.6rem;
+    padding-left: 0;
+  }
+
+  .navbar .nav-links a {
+    font-size: 1.2rem; /* تكبير حجم النص قليلاً */
+    padding: 10px 20px; /* زيادة الحواف عند الهاتف */
   }
 }
 
@@ -121,41 +130,39 @@ header p {
   color: #fff;
   border-radius: 50%;
   text-decoration: none;
-  background-color: #34495e; /* لون خلفية غامق */
+  background-color: #34495e;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
 .telegram, .instagram {
-  font-size: 2.5rem; /* زيادة حجم الأيقونات */
+  font-size: 2.5rem;
 }
 
-/* تغيير الألوان كل 3 ثواني باستخدام الأنيميشن */
 @keyframes changeColor {
   0% {
-    color: #2AABEE; /* اللون الأول - تيليجرام الأزرق */
+    color: #2AABEE;
   }
   25% {
-    color: #E4405F; /* اللون الثاني - إنستجرام الوردي */
+    color: #E4405F;
   }
   50% {
-    color: #3b5998; /* اللون الثالث - فيسبوك الأزرق */
+    color: #3b5998;
   }
   75% {
-    color: #ff6f00; /* اللون الرابع - اللون البرتقالي */
+    color: #ff6f00;
   }
   100% {
-    color: #0084ff; /* اللون الخامس - الأزرق الفاتح */
+    color: #0084ff;
   }
 }
 
 .telegram .icon, .instagram .icon {
-  animation: changeColor 3s infinite; /* تغيير الألوان كل 3 ثواني */
+  animation: changeColor 3s infinite;
 }
 
-/* عند التمرير على الروابط */
 .contact-btn:hover {
-  transform: scale(1.1); /* تكبير الأيقونة عند التمرير */
+  transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -178,7 +185,6 @@ header p {
 
 .input-group {
   margin: 15px 0;
-  position: relative;
 }
 
 input, textarea {
