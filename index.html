@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معي | النسخة الذكية</title>
+  <title>شاهين | تواصل معي</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,50 +14,56 @@
   <!-- المحتوى الرئيسي -->
   <main class="container">
     <header class="hero">
-      <h1 class="title animate-float">مرحبا بك 👋</h1>
-      <p class="subtitle">أرسل رسالتك الآن بكل سهولة</p>
+      <h1 class="title animate-float" data-lang="ar">مرحبًا شاهين 👋</h1>
+      <h1 class="title animate-float" data-lang="en">Welcome Shahin 👋</h1>
+      <p class="subtitle" data-lang="ar">أرسل رسالتك الآن بكل سهولة</p>
+      <p class="subtitle" data-lang="en">Send your message easily</p>
     </header>
 
     <!-- النموذج الذكي -->
     <section class="smart-form">
       <form id="myForm">
-        <!-- حقل الاسم مع تأثير البلازما -->
-        <div class="input-box plasma-effect">
+        <!-- حقل الاسم -->
+        <div class="input-box">
           <input type="text" id="userName" required>
-          <label for="userName">اسمك الكريم</label>
+          <label for="userName" data-lang="ar">اسمك الكريم</label>
+          <label for="userName" data-lang="en">Your Name</label>
           <div class="glow"></div>
         </div>
 
-        <!-- حقل البريد مع التحقق التلقائي -->
-        <div class="input-box plasma-effect">
+        <!-- حقل البريد -->
+        <div class="input-box">
           <input type="email" id="userEmail" required>
-          <label for="userEmail">بريدك الإلكتروني</label>
+          <label for="userEmail" data-lang="ar">بريدك الإلكتروني</label>
+          <label for="userEmail" data-lang="en">Your Email</label>
           <div class="glow"></div>
           <div class="validation-icon"></div>
         </div>
 
-        <!-- حقل الرسالة مع عداد الحروف -->
-        <div class="input-box plasma-effect">
+        <!-- حقل الرسالة -->
+        <div class="input-box">
           <textarea id="userMessage" required maxlength="500"></textarea>
-          <label for="userMessage">رسالتك...</label>
+          <label for="userMessage" data-lang="ar">رسالتك...</label>
+          <label for="userMessage" data-lang="en">Your Message...</label>
           <div class="glow"></div>
           <span class="char-counter">0/500</span>
         </div>
 
         <button type="submit" class="magic-btn">
-          <span>إرسال الرسالة</span>
+          <span data-lang="ar">إرسال الرسالة</span>
+          <span data-lang="en">Send Message</span>
           <div class="sparkles"></div>
         </button>
       </form>
       <div class="form-status"></div>
     </section>
 
-    <!-- الأيقونات الاجتماعية مع تأثير الهولوغرام -->
-    <div class="hologram-social">
-      <a href="https://t.me/s2a22" class="hologram-icon telegram">
+    <!-- الأيقونات الاجتماعية -->
+    <div class="social-icons">
+      <a href="https://t.me/s2a22" class="social-icon telegram">
         <i class="fab fa-telegram-plane"></i>
       </a>
-      <a href="https://www.instagram.com/s2a2222/" class="hologram-icon instagram">
+      <a href="https://www.instagram.com/s2a2222/" class="social-icon instagram">
         <i class="fab fa-instagram"></i>
       </a>
     </div>
