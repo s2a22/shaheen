@@ -15,7 +15,15 @@ body {
   transition: background 1s ease-in-out;
 }
 
-/* شريط التنقل الثابت */
+/* خلفية particles خلف المحتوى */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* شريط التنقل */
 .navbar {
   position: fixed;
   top: 0;
@@ -89,109 +97,19 @@ header {
   animation: fadeIn 2s ease-in-out;
 }
 
-h1 {
+header h1 {
   font-size: 3rem;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-p {
+header p {
   font-size: 1.2rem;
   color: #bdc3c7;
   margin-bottom: 30px;
 }
 
-/* روابط التواصل الاجتماعي */
-.contact-links {
-  margin: 20px 0;
-}
-
-.contact-btn {
-  display: inline-block;
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 1.2rem;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  background-color: #4CAF50;
-  transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #45a049;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.telegram {
-  background-color: #2AABEE;
-}
-
-.instagram {
-  background-color: #E4405F;
-}
-
-/* قسم تواصل الرسائل (النموذج) */
-.feedback-section {
-  margin-top: 50px;
-  background-color: #2c3e50;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.feedback-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.input-group {
-  margin: 15px 0;
-  position: relative;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #34495e;
-  color: #ecf0f1;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus, textarea:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
-}
-
-textarea {
-  height: 150px;
-}
-
-.submit-btn {
-  padding: 12px 30px;
-  margin-top: 15px;
-  font-size: 1.2rem;
-  color: white;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.submit-btn:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-
-/* قسم النشرة البريدية */
+/* قسم الاشتراك في النشرة البريدية */
 .newsletter-section {
   margin: 50px auto;
   max-width: 600px;
@@ -206,20 +124,14 @@ textarea {
   color: #fff;
 }
 
-/* زر الرجوع للأعلى */
-#back-to-top {
-  position: fixed;
-  bottom: 50px;
-  right: 30px;
-  background-color: #3498db;
-  color: #fff;
-  padding: 15px;
-  border-radius: 50%;
-  display: none;
-  cursor: pointer;
+#newsletter-response {
+  font-size: 1.2rem;
+  color: #27ae60;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* صفحة الكورسات */
+/* قسم الكورسات */
 .courses-container {
   display: flex;
   flex-direction: column;
@@ -253,6 +165,19 @@ textarea {
   background-color: #2980b9;
 }
 
+/* زر الرجوع للأعلى */
+#back-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  background-color: #3498db;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
 /* التذييل */
 footer {
   margin-top: 40px;
@@ -264,17 +189,6 @@ footer {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
-}
-
-@keyframes slideUp {
-  0% { transform: translateY(30px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-#response-message, #newsletter-response {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  animation: fadeIn 2s ease-in-out;
 }
 
 /* Tooltip */
