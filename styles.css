@@ -7,28 +7,23 @@
 
 body {
     font-family: 'Cairo', sans-serif;
-    /* تغيير ألوان الموقع لتكون داكنة مع نصوص فاتحة */
     color: #e0e0e0;
     background: #121212;
     opacity: 0; /* للتأثير عند التحميل */
     transition: opacity 1s ease-in-out;
 }
 
-/* الخلفية المتحركة الداكنة */
-.animated-background {
-    background: linear-gradient(45deg, #090909, #1a1a1a, #252525);
-    background-size: 400% 400%;
+/* الخلفية المتحركة */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 /* شريط التنقل */
 .navbar {
     background: rgba(15, 15, 15, 0.9);
-}
-
-/* الوضع الفاتح */
-body.light-mode {
-    background: #f0f0f0;
-    color: #222;
 }
 
 /* نص متحرك مع تأثير بسيط */
@@ -52,142 +47,18 @@ body.light-mode {
     transform: scale(1.1);
 }
 
-/* زر تبديل الوضع */
-.mode-toggle {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-/* باقي التنسيقات تبقى كما هي للمربعات والعناصر الأخرى */
-
-/* شريط التنقل وتنسيق القائمة */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-    color: #6a11cb;
-}
-
-/* تحسين الحاوية لتجنب تغطية شريط التنقل */
-.container {
-    margin-top: 70px;
-    padding: 20px;
-}
-
-/* تحسين العناوين */
-.animated-title {
-    animation: title-float 3s ease-in-out infinite alternate;
-    font-size: 2.5rem;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(106,17,203,0.5);
-}
-
-.animated-subtitle {
-    display: inline-block;
-    animation: subtitle-color 5s infinite;
-    font-weight: 300;
-}
-
-@keyframes title-float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
-}
-
-@keyframes subtitle-color {
-    0% { color: #6a11cb; }
-    50% { color: #2575fc; }
-    100% { color: #37ecba; }
-}
-
-/* حقول الإدخال تبقى كما هي */
-.input-group {
-    position: relative;
-    margin: 1.5rem 0;
-}
-
-.animated-input {
-    width: 100%;
-    padding: 15px 45px 15px 20px;
-    background: rgba(255,255,255,0.1);
-    border: 2px solid #2d3436;
-    border-radius: 8px;
-    color: #fff;
-    transition: all 0.3s ease;
-    font-size: 16px;
-}
-
-.animated-input:focus {
-    background: rgba(255,255,255,0.15);
-    border-color: #6a11cb;
-    box-shadow: 0 0 20px rgba(106,17,203,0.3);
-}
-
-.input-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #6a11cb;
-    font-size: 1.2rem;
-}
-
-/* أزرار التواصل */
-.contact-links {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    margin: 3rem 0;
-}
-
+/* باقي التنسيقات */
 .contact-btn {
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 18px 35px;
     border-radius: 15px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255,255,255,0.1);
 }
-
-.contact-btn:hover {
-    transform: translateY(-5px);
-    background: rgba(106,17,203,0.2);
-    box-shadow: 0 10px 25px rgba(106,17,203,0.2);
-}
-
-.contact-btn i {
-    font-size: 1.5rem;
-}
-
-.telegram { color: #2AABEE; }
-.instagram { color: #E4405F; }
 
 /* قسم حول الموقع */
 .about-section {
@@ -195,30 +66,4 @@ body.light-mode {
     padding: 20px;
     background: rgba(255,255,255,0.1);
     border-radius: 8px;
-}
-
-.about-section h2 {
-    margin-bottom: 10px;
-    color: #6a11cb;
-}
-
-.about-section p {
-    line-height: 1.6;
-}
-
-/* التذييل */
-footer {
-    margin-top: 4rem;
-    padding: 2rem;
-    background: rgba(0,0,0,0.3);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-}
-
-/* إعدادات إضافية لعناصر particles */
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
