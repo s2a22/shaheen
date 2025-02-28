@@ -3,58 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معي</title>
+  <title>تواصل معي | النسخة المطورة</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- إضافة preload للخطوط لتحسين الأداء -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <!-- Background Particles -->
+  <!-- الجسيمات المتحركة -->
   <div id="particles-js"></div>
 
-  <!-- Header Section -->
-  <header>
-    <h1>تواصل معي</h1>
-    <p>أنا هنا للرد على استفساراتك! تواصل معي عبر الوسائل التالية أو عبر النموذج.</p>
-  </header>
+  <!-- الشريط العلوي -->
+  <nav class="navbar">
+    <div class="brand">مرحبا بك! 👋</div>
+  </nav>
 
-  <!-- Contact Links -->
-  <section class="contact-links">
-    <a href="https://t.me/s2a22" target="_blank" class="contact-btn telegram" data-tooltip="تواصل عبر تيليجرام">
-      <i class="fab fa-telegram-plane icon"></i> تيليجرام
-    </a>
-    <a href="https://www.instagram.com/s2a2222/" target="_blank" class="contact-btn instagram" data-tooltip="تواصل عبر إنستجرام">
-      <i class="fab fa-instagram icon"></i> إنستجرام
-    </a>
-  </section>
+  <!-- المحتوى الرئيسي -->
+  <main class="container">
+    <header class="hero">
+      <h1 class="title animate-pop">تواصل معي</h1>
+      <p class="subtitle">أرسل رسالتك أو تواصل عبر الوسائل التالية</p>
+    </header>
 
-  <!-- Form Section -->
-  <section class="form-section">
-    <h2>أرسل رسالة</h2>
-    <form id="contact-form" action="https://formspree.io/f/xjkgnkdy" method="POST">
-      <div class="input-group">
-        <input type="text" id="name" name="name" required placeholder="اسمك الكريم">
-      </div>
-      <div class="input-group">
-        <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني">
-      </div>
-      <div class="input-group">
-        <textarea id="message" name="message" required placeholder="رسالتك ..."></textarea>
-      </div>
-      <button type="submit" class="submit-btn">إرسال الرسالة</button>
-    </form>
-    <div id="response-message"></div>
-  </section>
+    <!-- روابط التواصل -->
+    <section class="social-grid">
+      <a href="https://t.me/s2a22" target="_blank" class="social-card telegram">
+        <i class="fab fa-telegram-plane"></i>
+        <span>تيليجرام</span>
+        <div class="wave-effect"></div>
+      </a>
+      <a href="https://www.instagram.com/s2a2222/" target="_blank" class="social-card instagram">
+        <i class="fab fa-instagram"></i>
+        <span>إنستجرام</span>
+        <div class="wave-effect"></div>
+      </a>
+    </section>
 
-  <!-- Back-to-Top Button -->
-  <button id="back-to-top" class="back-to-top">↑</button>
+    <!-- نموذج الاتصال -->
+    <section class="contact-form-section">
+      <form id="contactForm" action="https://formspree.io/f/xjkgnkdy" method="POST">
+        <div class="form-group">
+          <input type="text" id="fullName" name="name" required>
+          <label for="fullName">الاسم الكامل</label>
+          <div class="underline"></div>
+        </div>
+        
+        <div class="form-group">
+          <input type="email" id="emailAddress" name="email" required>
+          <label for="emailAddress">البريد الإلكتروني</label>
+          <div class="underline"></div>
+        </div>
+        
+        <div class="form-group">
+          <textarea id="yourMessage" name="message" required></textarea>
+          <label for="yourMessage">رسالتك...</label>
+          <div class="underline"></div>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <span>إرسال الآن</span>
+          <div class="loading-dots"></div>
+        </button>
+      </form>
+      <div id="formResult" class="result-message"></div>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 جميع الحقوق محفوظة</p>
+  <!-- الزر العائم -->
+  <button id="scrollTop" class="scroll-top-btn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- تذييل الصفحة -->
+  <footer class="main-footer">
+    <p>© 2025 جميع الحقوق محفوظة | تم التطوير بحب ❤️</p>
   </footer>
 
   <script src="particles.min.js"></script>
