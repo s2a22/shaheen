@@ -1,138 +1,110 @@
-/* قاعدة عامة لكل العناصر */
+/* style.css */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: #121212; /* خلفية داكنة */
+    background: linear-gradient(-45deg, #000000, #2d2d2d, #000000, #3a3a3a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    animation: backgroundAnimation 5s ease-in-out infinite; /* التأثير المتحرك للون الخلفية */
 }
 
-/* خلفية متحركة */
-@keyframes backgroundAnimation {
-    0% {
-        background: #121212;
-    }
-    50% {
-        background: #333333;
-    }
-    100% {
-        background: #121212;
-    }
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #aaa;
 }
 
 .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.coming-soon {
     text-align: center;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-    animation: containerAnimation 1s ease-in-out;
+    padding: 100px 0;
 }
 
-/* حركة تأثير العنصر */
-@keyframes containerAnimation {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+.form-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
 }
 
-header {
-    margin-bottom: 40px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    animation: headerAnimation 1s ease-in-out;
-}
-
-p {
-    font-size: 1.2rem;
-    color: #ff5733;
-}
-
-/* تأثير تحريك النص عند التمرير */
-@keyframes headerAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.icon-container {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-.icon {
-    display: inline-block;
-    margin: 0 15px;
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.icon img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    transition: transform 0.3s, filter 0.3s;
-}
-
-/* تأثير تكبير الأيقونة عند التمرير */
-.icon:hover img {
-    transform: scale(1.2);
-    filter: brightness(1.3);
-}
-
-.courses {
-    margin-top: 30px;
-    padding: 10px 30px;
-    background: linear-gradient(135deg, #ff6f61, #d83f3f); /* خلفية متدرجة */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.courses a {
-    text-decoration: none;
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
     color: white;
+    transition: all 0.3s;
 }
 
-.courses:hover {
-    background: linear-gradient(135deg, #d83f3f, #ff6f61); /* تغيير التدرج عند التمرير */
+button {
+    background: #2d2d2d;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* زر العودة إلى الصفحة الرئيسية */
-.back-btn a {
-    text-decoration: none;
-    color: #ff5733;
-    font-size: 1.2rem;
+button:hover {
+    background: #3a3a3a;
+}
+
+.social {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icon {
+    color: #888;
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.back-btn {
     display: inline-block;
     margin-top: 20px;
+    padding: 10px 30px;
+    background: #2d2d2d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.back-btn a:hover {
-    color: #c13c1e;
+.back-btn:hover {
+    background: #3a3a3a;
 }
