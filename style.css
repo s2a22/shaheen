@@ -1,4 +1,3 @@
-/* style.css */
 * {
     margin: 0;
     padding: 0;
@@ -107,4 +106,33 @@ button:hover {
 
 .back-btn:hover {
     background: #3a3a3a;
+}
+
+.success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2d2d2d;
+    padding: 30px 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.success-message p {
+    color: #4CAF50;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.success-message button {
+    background: #4CAF50;
+    padding: 8px 20px;
+}
+
+.success-message button:hover {
+    background: #45a049;
 }
