@@ -1,11 +1,49 @@
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const inputs = document.querySelectorAll('input, textarea');
+    const form = document.getElementById('contactForm');
+    const emailInput = document.getElementById('emailInput');
     
-    inputs.forEach(input => {
-        input.addEventListener('input', () => {
-            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            input.style.borderColor = randomColor;
-        });
+    // Email validation
+    emailInput.addEventListener('input', () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(emailRegex.test(emailInput.value)) {
+            emailInput.style.borderColor = '#4CAF50';
+        } else {
+            emailInput.style.borderColor = '#333';
+        }
+    });
+
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch('https://formspree.io/f/xjkgnkdy', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if(response.ok) {
+                showSuccess();
+                form.reset();
+                emailInput.style.borderColor = '#333';
+            } else {
+                alert('Error sending message!');
+            }
+        } catch (error) {
+            alert('Connection error!');
+        }
     });
 });
+
+function showSuccess() {
+    document.getElementById('success-message').style.display = 'block';
+}
+
+function closeSuccess() {
+    document.getElementById('success-message').style.display = 'none';
+}
