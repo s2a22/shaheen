@@ -1,0 +1,138 @@
+/* قاعدة عامة لكل العناصر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212; /* خلفية داكنة */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: backgroundAnimation 5s ease-in-out infinite; /* التأثير المتحرك للون الخلفية */
+}
+
+/* خلفية متحركة */
+@keyframes backgroundAnimation {
+    0% {
+        background: #121212;
+    }
+    50% {
+        background: #333333;
+    }
+    100% {
+        background: #121212;
+    }
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    animation: containerAnimation 1s ease-in-out;
+}
+
+/* حركة تأثير العنصر */
+@keyframes containerAnimation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    animation: headerAnimation 1s ease-in-out;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #ff5733;
+}
+
+/* تأثير تحريك النص عند التمرير */
+@keyframes headerAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+/* تأثير تكبير الأيقونة عند التمرير */
+.icon:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}
+
+.courses {
+    margin-top: 30px;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #ff6f61, #d83f3f); /* خلفية متدرجة */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.courses a {
+    text-decoration: none;
+    color: white;
+}
+
+.courses:hover {
+    background: linear-gradient(135deg, #d83f3f, #ff6f61); /* تغيير التدرج عند التمرير */
+}
+
+/* زر العودة إلى الصفحة الرئيسية */
+.back-btn a {
+    text-decoration: none;
+    color: #ff5733;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.back-btn a:hover {
+    color: #c13c1e;
+}
